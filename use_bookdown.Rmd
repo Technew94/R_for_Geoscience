@@ -1,0 +1,9 @@
+---
+title: "How to use bookdown to write a book"
+output: html_document
+date: "2023-02-22"
+---
+
+
+请参考以下视频
+https://www.youtube.com/watch?v=9i0ElncHGRg&t=905s
