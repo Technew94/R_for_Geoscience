@@ -1,7 +1,7 @@
 --- 
 title: "A Minimal Book Example"
 author: "John Doe"
-date: "2023-02-21"
+date: "2023-02-22"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -18,6 +18,7 @@ csl: chicago-fullnote-bibliography.csl
 # About {-}
 
 你好，这里是shuxin对R和R在地理数据处理方面能力的第一次尝试。
+啊多发点changshi huozhe gengduo de changshi 
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
 
