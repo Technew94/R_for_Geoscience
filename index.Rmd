@@ -18,7 +18,22 @@ csl: chicago-fullnote-bibliography.csl
 # About {-}
 
 你好，这里是shuxin对R和R在地理数据处理方面能力的第一次尝试。
-啊多发点changshi huozhe gengduo de changshi 
+啊多发点changshi huozhe gengduo de changshi
+
+你好，这里是shuxin对R和R在地理数据处理方面能力的第一次尝试。
+博士入学时，导师告诉我最好还是要掌握一门语言来对地理数据进行处理，因为在日后的工作中
+总会遇到大体量数据而不能通过手工完成，所以这是写下这本参考书目的原因之一。在未接触R之前，
+我都是通过桌面软件Arcgis, Qgis, ENVI, SNAP完成地理数据的查找，下载，预处理等工作，这种方法的
+好处就在于每一步都是所见即所得，自己心中可以清楚的预计每一步之后的结果大概是怎样的，但缺点也
+非常明显，一旦某一步操作出现了纰漏就可能对最终处理结果产生影响，进而导致结果的不可信，每当这时
+就需要从头开始梳理，重复数据的处理过程，这对我的工作积极性造成非常大的打击，
+我相信经历过以上过程的你是深有体会的。
+
+本书的重点主要放在地理工作中可能出现的问题上，也可以算作对我硕士、博士阶段所遇到问题的总结。
+期间所用到的主要工具是R，在这里我不会给大家展示各种绚丽的代码，只需要大家跟随本书的思路，一步步
+实践下来，当你能轻松的应对本书所描述的各类问题时，我相信你就已经是一位合格的地理工作者了。
+
+在我的学习期间，导师的日常工作非常繁忙，feichang
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
 
