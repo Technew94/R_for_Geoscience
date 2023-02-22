@@ -7,3 +7,11 @@
 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：
 
 ![*Ross Ihaka and Robert Gentleman, the creators of R.*](images/creators.jpg)
+
+
+
+R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。[The R Base Package](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) 会是你的好帮手。
+
+
+
+平时在小红书，微博，B站等经常看到有人做数据分析师等，他们掌握的语言工具并不止一种，R，Python，stata等都是需要用到的，但对于入门级选手来说，R是最友好的，也是最容易让你产生成就感的。
