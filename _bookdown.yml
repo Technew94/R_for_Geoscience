@@ -8,12 +8,14 @@ language:
 
 rmd_files: [
   "index.Rmd",
-  "author.Rmd"
-
-  # 基础篇
+  "author.Rmd",
   
-
-  # tidyverse篇
   
+  "01-baseR.Rmd",
+  "02-tidyverse.Rmd",
+  "use_bookdown.Rmd"
 
+  
+ 
+  
 ]
