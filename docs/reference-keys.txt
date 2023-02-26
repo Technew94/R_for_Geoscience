@@ -1,7 +1,4 @@
-about
 课程安排
-作者简介
-part-base-r
 base-r-you-have-to-know
 安装与配置
 r-是啥干啥用的
@@ -9,15 +6,3 @@ vector向量
 lists列表
 matrices矩阵
 data-frame数据框
-咋又来一个新东西
-ggplot2
-reference-links
-part-bookdown
-raster
-resolution
-spatial-resolution
-temporal-resolution
-crs
-manipulation-in-r
-reference
-multispectral-sensors

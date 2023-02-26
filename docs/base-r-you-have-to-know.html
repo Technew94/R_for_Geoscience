@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Base R you have to know | 10-multispectral_sensor</title>
-<meta name="author" content="shuxin">
-<meta name="description" content="4.1 安装与配置   4.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
+<title>Chapter 1 Base R you have to know | R for Geoscience</title>
+<meta name="author" content="Shuxin Ji">
+<meta name="description" content="1.1 安装与配置   1.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
 <meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Base R you have to know | 10-multispectral_sensor">
+<meta property="og:title" content="Chapter 1 Base R you have to know | R for Geoscience">
 <meta property="og:type" content="book">
-<meta property="og:description" content="4.1 安装与配置   4.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
+<meta property="og:description" content="1.1 安装与配置   1.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Base R you have to know | 10-multispectral_sensor">
-<meta name="twitter:description" content="4.1 安装与配置   4.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
+<meta name="twitter:title" content="Chapter 1 Base R you have to know | R for Geoscience">
+<meta name="twitter:description" content="1.1 安装与配置   1.2 R? 是啥，干啥用的？ 1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样： Ross Ihaka and Robert Gentleman, the creators of R....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">10-multispectral_sensor</a>
+        <a href="index.html" title="">R for Geoscience</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -43,15 +43,10 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li><a class="" href="%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B.html"><span class="header-section-number">2</span> 作者简介</a></li>
-<li class="book-part">Base R</li>
-<li><a class="active" href="base-r-you-have-to-know.html"><span class="header-section-number">4</span> Base R you have to know</a></li>
-<li><a class="" href="all-about-tidyverse.html">All about tidyverse</a></li>
-<li class="book-part">bookdown</li>
-<li><a class="" href="how-to-write-a-book.html">how to write a book</a></li>
-<li><a class="" href="raster.html"><span class="header-section-number">6</span> Raster</a></li>
-<li><a class="" href="multispectral-sensors.html"><span class="header-section-number">7</span> Multispectral sensors</a></li>
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="author.html">作者简介</a></li>
+<li class="book-part">基础篇</li>
+<li><a class="active" href="base-r-you-have-to-know.html"><span class="header-section-number">1</span> Base R you have to know</a></li>
 </ul>
 
         <div class="book-extra">
@@ -59,18 +54,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="base-r-you-have-to-know" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="base-r-you-have-to-know" class="section level1" number="1">
 <h1>
-<span class="header-section-number">4</span> Base R you have to know<a class="anchor" aria-label="anchor" href="#base-r-you-have-to-know"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1</span> Base R you have to know<a class="anchor" aria-label="anchor" href="#base-r-you-have-to-know"><i class="fas fa-link"></i></a>
 </h1>
-<div id="安装与配置" class="section level2" number="4.1">
+<div id="安装与配置" class="section level2" number="1.1">
 <h2>
-<span class="header-section-number">4.1</span> 安装与配置<a class="anchor" aria-label="anchor" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.1</span> 安装与配置<a class="anchor" aria-label="anchor" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="r-是啥干啥用的" class="section level2" number="4.2">
+<div id="r-是啥干啥用的" class="section level2" number="1.2">
 <h2>
-<span class="header-section-number">4.2</span> R? 是啥，干啥用的？<a class="anchor" aria-label="anchor" href="#r-%E6%98%AF%E5%95%A5%E5%B9%B2%E5%95%A5%E7%94%A8%E7%9A%84"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.2</span> R? 是啥，干啥用的？<a class="anchor" aria-label="anchor" href="#r-%E6%98%AF%E5%95%A5%E5%B9%B2%E5%95%A5%E7%94%A8%E7%9A%84"><i class="fas fa-link"></i></a>
 </h2>
 <p>1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：</p>
 <div class="figure">
@@ -79,9 +74,9 @@
 <p>R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html">The R Base Package</a> 会是你的好帮手。</p>
 <p>平时在小红书，微博，B站等经常看到有人做数据分析师等，他们掌握的语言工具并不止一种，R，Python，stata等都是需要用到的，但对于入门级选手来说，R是最友好的，也是最容易让你产生成就感的。</p>
 </div>
-<div id="vector向量" class="section level2" number="4.3">
+<div id="vector向量" class="section level2" number="1.3">
 <h2>
-<span class="header-section-number">4.3</span> Vector(向量)<a class="anchor" aria-label="anchor" href="#vector%E5%90%91%E9%87%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.3</span> Vector(向量)<a class="anchor" aria-label="anchor" href="#vector%E5%90%91%E9%87%8F"><i class="fas fa-link"></i></a>
 </h2>
 <p>Vector是R中的一种基础数据结构，它包含相同类型的元素。数据类型可以是逻辑、整数、双精度、字符、复杂或原始。</p>
 <p>举个例子，现在我们有1到5，5个整数，想要把他们组成一个向量应该怎么操作呢？</p>
@@ -149,9 +144,9 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span> <span class="co"># Sort numbers</span></span>
 <span><span class="co">#&gt; [1]  2  3  5  7 13 20</span></span></code></pre></div>
 </div>
-<div id="lists列表" class="section level2" number="4.4">
+<div id="lists列表" class="section level2" number="1.4">
 <h2>
-<span class="header-section-number">4.4</span> Lists(列表)<a class="anchor" aria-label="anchor" href="#lists%E5%88%97%E8%A1%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.4</span> Lists(列表)<a class="anchor" aria-label="anchor" href="#lists%E5%88%97%E8%A1%A8"><i class="fas fa-link"></i></a>
 </h2>
 <p>R 中的列表可以在其中包含许多不同的数据类型，列表是有序且可变的数据集合。啥意思呢？
 说人话就是甭管啥类型数据都往里搁就完了，要创建列表，使用<code><a href="https://rdrr.io/r/base/list.html">list()</a></code>函数：打个样，</p>
@@ -180,9 +175,9 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">thislist</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 3</span></span></code></pre></div>
 </div>
-<div id="matrices矩阵" class="section level2" number="4.5">
+<div id="matrices矩阵" class="section level2" number="1.5">
 <h2>
-<span class="header-section-number">4.5</span> Matrices(矩阵)<a class="anchor" aria-label="anchor" href="#matrices%E7%9F%A9%E9%98%B5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.5</span> Matrices(矩阵)<a class="anchor" aria-label="anchor" href="#matrices%E7%9F%A9%E9%98%B5"><i class="fas fa-link"></i></a>
 </h2>
 <p>矩阵是啥？别看名字吓人，其实也没啥，前面讲向量，列表它们都是一维的，矩阵是具有列(column)和行(row)的二维数据集。列是数据的垂直表示，而行是数据的水平表示。可以使用<code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code> 函数创建矩阵,打个样，</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
@@ -323,9 +318,9 @@ Again, you can use the rbind() or cbind() function to combine two or more matric
 <span><span class="co">#&gt; [1,] "apple"  "cherry" "orange" "pineapple" </span></span>
 <span><span class="co">#&gt; [2,] "banana" "grape"  "mango"  "watermelon"</span></span></code></pre></div>
 </div>
-<div id="data-frame数据框" class="section level2" number="4.6">
+<div id="data-frame数据框" class="section level2" number="1.6">
 <h2>
-<span class="header-section-number">4.6</span> Data Frame(数据框)<a class="anchor" aria-label="anchor" href="#data-frame%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.6</span> Data Frame(数据框)<a class="anchor" aria-label="anchor" href="#data-frame%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
 </h2>
 <p>数据框是以表格格式显示的数据。</p>
 <p>数据框可以在其中包含不同类型的数据。 第一列可以是字符，第二列和第三列可以是数字或逻辑。 但是，每一列都应具有相同类型的数据。</p>
@@ -437,18 +432,18 @@ Again, you can use the rbind() or cbind() function to combine two or more matric
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B.html"><span class="header-section-number">2</span> 作者简介</a></div>
-<div class="next"><a href="all-about-tidyverse.html">All about tidyverse</a></div>
+<div class="prev"><a href="author.html">作者简介</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#base-r-you-have-to-know"><span class="header-section-number">4</span> Base R you have to know</a></li>
-<li><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="header-section-number">4.1</span> 安装与配置</a></li>
-<li><a class="nav-link" href="#r-%E6%98%AF%E5%95%A5%E5%B9%B2%E5%95%A5%E7%94%A8%E7%9A%84"><span class="header-section-number">4.2</span> R? 是啥，干啥用的？</a></li>
-<li><a class="nav-link" href="#vector%E5%90%91%E9%87%8F"><span class="header-section-number">4.3</span> Vector(向量)</a></li>
-<li><a class="nav-link" href="#lists%E5%88%97%E8%A1%A8"><span class="header-section-number">4.4</span> Lists(列表)</a></li>
-<li><a class="nav-link" href="#matrices%E7%9F%A9%E9%98%B5"><span class="header-section-number">4.5</span> Matrices(矩阵)</a></li>
-<li><a class="nav-link" href="#data-frame%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">4.6</span> Data Frame(数据框)</a></li>
+<li><a class="nav-link" href="#base-r-you-have-to-know"><span class="header-section-number">1</span> Base R you have to know</a></li>
+<li><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="header-section-number">1.1</span> 安装与配置</a></li>
+<li><a class="nav-link" href="#r-%E6%98%AF%E5%95%A5%E5%B9%B2%E5%95%A5%E7%94%A8%E7%9A%84"><span class="header-section-number">1.2</span> R? 是啥，干啥用的？</a></li>
+<li><a class="nav-link" href="#vector%E5%90%91%E9%87%8F"><span class="header-section-number">1.3</span> Vector(向量)</a></li>
+<li><a class="nav-link" href="#lists%E5%88%97%E8%A1%A8"><span class="header-section-number">1.4</span> Lists(列表)</a></li>
+<li><a class="nav-link" href="#matrices%E7%9F%A9%E9%98%B5"><span class="header-section-number">1.5</span> Matrices(矩阵)</a></li>
+<li><a class="nav-link" href="#data-frame%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">1.6</span> Data Frame(数据框)</a></li>
 </ul>
 
       <div class="book-extra">
@@ -466,7 +461,7 @@ Again, you can use the rbind() or cbind() function to combine two or more matric
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>10-multispectral_sensor</strong>" was written by shuxin. It was last built on 2023-02-24.</p>
+    <p>"<strong>R for Geoscience</strong>" was written by Shuxin Ji. It was last built on 2023-02-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,4 +1,4 @@
-# (PART\*) Base R 
+# (PART) 基础篇 {-}
 
 # Base R you have to know 
 

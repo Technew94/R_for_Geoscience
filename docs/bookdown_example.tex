@@ -110,14 +110,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={10-multispectral\_sensor},
-  pdfauthor={shuxin},
+  pdftitle={R for Geoscience},
+  pdfauthor={Shuxin Ji},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{10-multispectral\_sensor}
-\author{shuxin}
-\date{2023-02-24}
+\title{R for Geoscience}
+\author{Shuxin Ji}
+\date{2023-02-26}
 
 \begin{document}
 \maketitle
@@ -127,7 +127,8 @@
 \tableofcontents
 }
 \hypertarget{about}{%
-\chapter{About}\label{about}}
+\chapter*{About}\label{about}}
+\addcontentsline{toc}{chapter}{About}
 
 你好，这里是shuxin对R在地理数据处理方面能力的第一次尝试。 博士入学时，导师告诉我最好还是要掌握一门语言来对地理数据进行处理，因为在日后的工作中 总会遇到大体量数据而不能通过手工完成，所以这是写下这本参考书目的原因之一。在未接触R之前，我都是通过桌面软件Arcgis，Qgis，ENVI，SNAP完成地理数据的查找，下载，预处理等工作，这种方法的好处就在于每一步都是所见即所得，自己心中可以清楚的预计每一步之后的结果大概是怎样的，但缺点也非常明显，一旦某一步操作出现了纰漏就可能对最终处理结果产生影响，进而导致结果的不可信，每当这时就需要从头开始梳理，重复数据的处理过程，这对我的工作积极性造成非常大的打击，我相信经历过以上过程的你一定深有体会。
 
@@ -144,14 +145,15 @@
 \hypertarget{ux8bfeux7a0bux5b89ux6392}{%
 \section{\texorpdfstring{\textbf{课程安排}}{课程安排}}\label{ux8bfeux7a0bux5b89ux6392}}
 
-\hypertarget{ux4f5cux8005ux7b80ux4ecb}{%
-\chapter{作者简介}\label{ux4f5cux8005ux7b80ux4ecb}}
+\hypertarget{author}{%
+\chapter*{作者简介}\label{author}}
+\addcontentsline{toc}{chapter}{作者简介}
 
-shuxin，地理学博士学位在读，对R及其在地理空间数据的应用充满了好奇与热情，在这里
+地理学博士学位在读，对R及其在地理空间数据的应用充满了好奇与热情，在这里
 记录下自己在日常工作中有趣的数据处理过程。我认为偷懒能更好地促进技术发展。
 
-\hypertarget{part-base-r}{%
-\chapter{(PART*) Base R}\label{part-base-r}}
+\hypertarget{part-ux57faux7840ux7bc7}{%
+\part{基础篇}\label{part-ux57faux7840ux7bc7}}
 
 \hypertarget{base-r-you-have-to-know}{%
 \chapter{Base R you have to know}\label{base-r-you-have-to-know}}
@@ -704,87 +706,6 @@ Use the \texttt{summary()} function to summarize the data from a Data Frame:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{all-about-tidyverse}{%
-\chapter*{All about tidyverse}\label{all-about-tidyverse}}
-\addcontentsline{toc}{chapter}{All about tidyverse}
-
-\hypertarget{ux548bux53c8ux6765ux4e00ux4e2aux65b0ux4e1cux897f}{%
-\section{咋又来一个新东西？}\label{ux548bux53c8ux6765ux4e00ux4e2aux65b0ux4e1cux897f}}
-
-\hypertarget{ggplot2}{%
-\section{ggplot2}\label{ggplot2}}
-
-\hypertarget{reference-links}{%
-\section{Reference links}\label{reference-links}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{https://r-graph-gallery.com/}{The R Graph Gallery}
-\item
-  \href{https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r}{A ggplot2 Tutorial for Beautiful Plotting in R}\\
-\end{itemize}
-
-\hypertarget{part-bookdown}{%
-\chapter{(PART*) bookdown}\label{part-bookdown}}
-
-\hypertarget{how-to-write-a-book}{%
-\chapter*{how to write a book}\label{how-to-write-a-book}}
-\addcontentsline{toc}{chapter}{how to write a book}
-
-请参考以下视频
-\url{https://www.youtube.com/watch?v=9i0ElncHGRg\&t=905s}
-
-\hypertarget{raster}{%
-\chapter{Raster}\label{raster}}
-
-\hypertarget{resolution}{%
-\section{Resolution}\label{resolution}}
-
-What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are \textbf{three} different resolutions for a satellite image in Geoscience.\\
-
-\hypertarget{spatial-resolution}{%
-\subsection{\texorpdfstring{\textbf{Spatial resolution}}{Spatial resolution}}\label{spatial-resolution}}
-
-Spatial resolution is the detail in pixels of an image. High spatial resolution means more detail and a smaller grid cell size. Whereas, lower spatial resolution means less detail and larger pixel size. Overall, spatial resolution describes the quality of an image and how detailed objects are in an image. If the grid cells are smaller, this means the spatial resolution has more detail with more pixels.
-
-\includegraphics{images/Spatial-Resolution-Comparison.png}
-
-\hypertarget{temporal-resolution}{%
-\subsection{\texorpdfstring{\textbf{Temporal resolution}}{Temporal resolution}}\label{temporal-resolution}}
-
-Same definition of temporal resolution can be applied to polar orbiting satellites. But defining it more precisely, temporal resolution for a polar orbiting satellite is the amount of time that the satellite takes to revisit and recapture a particular site. It is also commonly referred to as a satellite's revisit period.
-
-\includegraphics{images/temporal-resolution.png}
-\#\#\# \textbf{Spectral resolution}\\
-
-Spectral resolution is determined by the width of each band in a wavelength. The more bands in an image, the more complex the color will be.
-
-\includegraphics{images/Spectral-resolution.png}\\
-
-\hypertarget{crs}{%
-\section{CRS}\label{crs}}
-
-A Coordinate reference system (CRS) defines, with the help of coordinates, how the two-dimensional, projected map is related to real locations on the earth. There are two different types of coordinate reference systems: \textbf{\texttt{Geographic\ Coordinate\ Systems}} and \textbf{\texttt{Projected\ Coordinate\ Systems}}.
-
-\hypertarget{manipulation-in-r}{%
-\section{Manipulation in R}\label{manipulation-in-r}}
-
-How can we manipulate remote sensing imagery in R after we have a general understanding of raster data? Here I want to introduce to you a package: \texttt{terra}, which is a tweaked version or even a more powerful package than the well-known one: \texttt{raster}. As for the reason why the author choose to rebuild some functions, you can check it \href{http://www.wvview.org/os_sa/15_Raster_Analysis_terra.html}{here}.
-
-\hypertarget{reference}{%
-\section{Reference}\label{reference}}
-
-\begin{itemize}
-\tightlist
-\item
-  \url{http://modern-rstats.eu/index.html\#note-to-the-reader}
-\end{itemize}
-
-\hypertarget{multispectral-sensors}{%
-\chapter{Multispectral sensors}\label{multispectral-sensors}}
-
-In this section I'll introduce you to three well-known high-resolution multispectral sensor satellites in this section: \href{https://modis.gsfc.nasa.gov/}{MODIS}, \href{https://landsat.gsfc.nasa.gov/}{Landsat}, and \href{https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2}{Sentinel-2}.
 
   \bibliography{book.bib,packages.bib}
 
