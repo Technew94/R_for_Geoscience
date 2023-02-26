@@ -1,4 +1,4 @@
-# (PART) 基础篇 {-}
+# (PART) 基础 {-}
 
 # Base R you have to know 
 
@@ -7,13 +7,11 @@
 
 ## R? 是啥，干啥用的？
 
-1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：
+1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：\
 
-![*Ross Ihaka and Robert Gentleman, the creators of R.*](images/creators.jpg)
+![*Ross Ihaka and Robert Gentleman, the creators of R.*](images/creators.jpg){ width=50% }
 
 R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。[The R Base Package](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) 会是你的好帮手。
-
-平时在小红书，微博，B站等经常看到有人做数据分析师等，他们掌握的语言工具并不止一种，R，Python，stata等都是需要用到的，但对于入门级选手来说，R是最友好的，也是最容易让你产生成就感的。
 
 ## Vector(向量)
 
@@ -60,12 +58,12 @@ log_values
 忘了讲，`#`井号键这个小符号挺好用，干啥的呢，注释掉一句话，说人话就是我这句话写在这了，但R你别给我运行，这句话就是提醒自己下面的代码是要干啥的，防止自己以后再回来看到自己写的东西一整个懵住，现在我也一直保持这个习惯，因为每天看的东西很多，回看过去的东西时经常会忘记当时为啥要这么写，还是挺有用处的，好记性不如烂笔头嘛！
 回到正文，上面的就是所谓的逻辑型向量，同理我们再构造一个字符型的，
 ```{r}
-fruits <- c("banana", "apple", "orange", "mango", "lemon", "50")
+fruits <- c("beijing", "shanghai", "guangzhou", "shenzhen", "xianggang", "50")
 fruits
 ```
 字符型的呢就要注意要给每一个单词或者数字加上英文双引号。
 
-在实际应用中，有时候我们只想用一个向量中的某个或某几个元素，这时候该咋办呢？这里介绍一种方法，`[]`，中括号，英文`brackets`,比如我要把fruits中的`"banana"`和`"mango"`拿出来，
+在实际应用中，有时候我们只想用一个向量中的某个或某几个元素，这时候该咋办呢？这里介绍一种方法，`[]`，中括号，英文`brackets`,比如我要把fruits中的`"beijing"`和`"shenzhen"`拿出来，
 ```{r}
 fruits[c(1,4)]
 ```
@@ -73,7 +71,7 @@ fruits[c(1,4)]
 ```{r}
 fruits[1:4]
 ```
-如果想要选取除了`"banana`以外的所有元素，这时候可以用减号，
+如果想要选取除了`"beijing`以外的所有元素，这时候可以用减号，
 ```{r}
 fruits[-1]
 ```
@@ -81,7 +79,7 @@ fruits[-1]
 
 当然了，对向量内元素进行排序也是可以的，遵循原则就是从小到大或者按照首字母排序，函数为`sort`,
 ```{r}
-fruits <- c("banana", "apple", "orange", "mango", "lemon")
+fruits <- c("beijing", "shanghai", "guangzhou", "shenzhen", "xianggang")
 numbers <- c(13, 3, 5, 7, 20, 2)
 
 sort(fruits)  # Sort a string
@@ -92,7 +90,7 @@ R 中的列表可以在其中包含许多不同的数据类型，列表是有序
 说人话就是甭管啥类型数据都往里搁就完了，要创建列表，使用`list()`函数：打个样，
 ```{r}
 thislist <- list(
-  a = c("apple", "banana", "cherry"),
+  a = c("shanghai", "beijing", "cherry"),
   b = c(1,2,5,6,7,9),
   c = c(TRUE, FALSE, TRUE)
 )
@@ -119,7 +117,7 @@ thismatrix
 NOTE:千万别忘了`c()`函数的用法啊，把众多元素组合在一起，怕你忘，提醒一下。
 数字矩阵，字符行不行呢？
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 thismatrix
 ```
@@ -129,40 +127,40 @@ Access Matrix Items
 You can access the items by using [ ] brackets. The first number "1" in the bracket specifies the row-position, while the second number "2" specifies the column-position:
 
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 thismatrix[1, 2]
 ```
 The whole row can be accessed if you specify a comma after the number in the bracket:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 thismatrix[2,]
 ```
 The whole column can be accessed if you specify a comma before the number in the bracket:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 thismatrix[,2]
 ```
 Access More Than One Row
 More than one row can be accessed if you use the c() function:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou","grape", "pineshanghai", "pear", "melon", "fig"), nrow = 3, ncol = 3)
 
 thismatrix[c(1,2),]
 ```
 Access More Than One Column
 More than one column can be accessed if you use the c() function:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou","grape", "pineshanghai", "pear", "melon", "fig"), nrow = 3, ncol = 3)
 
 thismatrix[, c(1,2)]
 ```
 Add Rows and Columns
 Use the cbind() function to add additional columns in a Matrix:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou","grape", "pineshanghai", "pear", "melon", "fig"), nrow = 3, ncol = 3)
 
 newmatrix <- cbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
 
@@ -171,7 +169,7 @@ newmatrix
 ```
 Use the rbind() function to add additional rows in a Matrix:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou","grape", "pineshanghai", "pear", "melon", "fig"), nrow = 3, ncol = 3)
 
 newmatrix <- rbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
 
@@ -182,7 +180,7 @@ newmatrix
 Remove Rows and Columns
 Use the c() function to remove rows and columns in a Matrix:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange", "mango", "pineapple"), nrow = 3, ncol =2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou", "shenzhen", "pineshanghai"), nrow = 3, ncol =2)
 
 #Remove the first row and the first column
 thismatrix <- thismatrix[-c(1), -c(1)]
@@ -193,15 +191,15 @@ thismatrix
 Check if an Item Exists
 To find out if a specified item is present in a matrix, use the %in% operator:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
-"apple" %in% thismatrix
+"shanghai" %in% thismatrix
 ```
 
 Number of Rows and Columns
 Use the dim() function to find the number of rows and columns in a Matrix:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 dim(thismatrix)
 ```
@@ -209,7 +207,7 @@ dim(thismatrix)
 Matrix Length
 Use the length() function to find the dimension of a Matrix:
 ```{r}
-thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+thismatrix <- matrix(c("shanghai", "beijing", "cherry", "guangzhou"), nrow = 2, ncol = 2)
 
 length(thismatrix)
 ```
@@ -218,8 +216,8 @@ Combine two Matrices
 Again, you can use the rbind() or cbind() function to combine two or more matrices together:
 ```{r}
 # Combine matrices
-Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
-Matrix2 <- matrix(c("orange", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+Matrix1 <- matrix(c("shanghai", "beijing", "cherry", "grape"), nrow = 2, ncol = 2)
+Matrix2 <- matrix(c("guangzhou", "shenzhen", "pineshanghai", "watermelon"), nrow = 2, ncol = 2)
 
 # Adding it as a rows
 Matrix_Combined <- rbind(Matrix1, Matrix2)
