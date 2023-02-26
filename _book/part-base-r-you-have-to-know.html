@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 1 (PART*) Base R you have to know | R for Geoscience</title>
+
+    <meta name="author" content="John Doe" />
+  
+   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 1 (PART*) Base R you have to know | R for Geoscience" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 (PART*) Base R you have to know | R for Geoscience" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.4.2/transition.js"></script>
+    <script src="libs/bs3compat-0.4.2/tabs.js"></script>
+    <script src="libs/bs3compat-0.4.2/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+      <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">R for Geoscience</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="part-base-r-you-have-to-know" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> (PART*) Base R you have to know</h1>
+<div id="r-是啥干啥用的" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> R? 是啥，干啥用的？</h2>
+<p>1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：</p>
+<div class="figure">
+<img src="images/creators.jpg" alt="" />
+<p class="caption"><em>Ross Ihaka and Robert Gentleman, the creators of R.</em></p>
+</div>
+<p>R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html">The R Base Package</a> 会是你的好帮手。</p>
+<p>平时在小红书，微博，B站等经常看到有人做数据分析师等，他们掌握的语言工具并不止一种，R，Python，stata等都是需要用到的，但对于入门级选手来说，R是最友好的，也是最容易让你产生成就感的。</p>
+</div>
+<div id="vector向量" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Vector(向量)</h2>
+<p>Vector是R中的一种基础数据结构，它包含相同类型的元素。数据类型可以是逻辑、整数、双精度、字符、复杂或原始。</p>
+<p>举个例子，现在我们有1到5，5个整数，想要把他们组成一个向量应该怎么操作呢？</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="part-base-r-you-have-to-know.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="part-base-r-you-have-to-know.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb1-3"><a href="part-base-r-you-have-to-know.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span></code></pre></div>
+<p>这里我们用<code>c()</code>函数来把1，2，3，4，5组合起来，然后通过<code>&lt;-</code>这个符号把这个值赋给<code>x</code>，这样就把一个简单的向量给构建完成了。请仔细体会这句话的涵义，先把第一要做的事情<code>组合1，2，3，4，5</code>完成，然后再赋值给一个变量<code>x</code>，请牢记这里的思路，这对后续R的运算是十分有帮助的。
+当然了，大家刚接触R心里肯定会有疑问，这个<code>c()</code>到底是干啥的，这个函数除了这么简单的组合起一个向量，还能做点别的不？这里就讲到一个非常重要的点，即查阅！学东西得会学，不能说是看了这本书讲了这样做，你能模仿下来，换本书举了个不一样的例子你就懵了，那相当于啥也没学，净看作者耍贫嘴去了。所以当对一个函数不了解或者想要刨根问底时，<code>??</code>小问号就排上用场了，我们在<code>Console</code>中输入<code>??c()</code>，右侧的Help页面就会弹出来关于该函数的帮助文档，请记住任何人都不会比函数开发者更加了解自己的函数是干啥的，同理以后若遇到新的函数你就知道该怎么做了。</p>
+<p>当然了，R也是一门语言，和其他语言一样，也是各种符号骚操作满天飞，不过不必惊慌，常用的也就那么几个，大神们也只是用的多了，脑子里记得的比我们更多一些，你与大神的差距真的就只是练的用的太少了（其实大神也是需要google的）。那这里就介绍本书的第一个符号<code>:</code>,中文里我们用作冒号，在R中我们可以理解为<code>到</code>，打个样给你看看，还是以上面的构造向量为例，</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="part-base-r-you-have-to-know.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb2-2"><a href="part-base-r-you-have-to-know.html#cb2-2" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb2-3"><a href="part-base-r-you-have-to-know.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span></code></pre></div>
+<p>开头我们讲了，vector有很多不同的类型，那么我们在看到一个向量时怎么去看看它到底是啥类型呢？这时候需要用到<code>typeof()</code>这个函数，</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="part-base-r-you-have-to-know.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span>
+<span id="cb3-2"><a href="part-base-r-you-have-to-know.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;integer&quot;</span></span></code></pre></div>
+<p>除了类型之外，向量还有另外一个十分重要的特征就是长度（length）,<code>length()</code>可以用来查看向量长度，</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="part-base-r-you-have-to-know.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span>
+<span id="cb4-2"><a href="part-base-r-you-have-to-know.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 5</span></span></code></pre></div>
+<p>自己动手输入数值还是挺麻烦的，R中的<code>seq()</code>可以帮助我们更快的创造一个向量，打个样，</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="part-base-r-you-have-to-know.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="fl">0.5</span>)</span>
+<span id="cb5-2"><a href="part-base-r-you-have-to-know.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5</span></span>
+<span id="cb5-3"><a href="part-base-r-you-have-to-know.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [15] 8.0 8.5 9.0</span></span></code></pre></div>
+<p>很神奇有没有，爱心算的你很快就知道了这行代码的意思是从1到9每间隔0.5输出一个值，但是为啥要这3个数字这么排列呢？这时候就得小问号<code>??</code>上场了，在Console中输入<br />
+<code>??seq</code><br />
+此时看到右侧<code>Help</code>界面的你心里默默念了一句什么鬼，能理解，换谁谁也蒙圈，啥呀都是，乱七八糟的这，莫慌，仔细看是不是这些蓝色的都有一个规律，就是里面都有一个<code>::</code>这个符号，两个小冒号连在一起，啥意思呢？<code>包::函数</code>，<code>package::function</code>，第一个就是cli这个包里的ansi_regex函数的意思，第二个就是cli这个包里的ansi_strip函数的意思。所以我们要找的应该是<code>base::seq</code>这个函数，为啥呢，看后面那句解释啊，sequence generation，这不写的生成随机数嘛。<br />
+点击进去以后一看还是有点懵，莫慌，一步步来，首先看<code>Description</code>知道这个函数是用来构造随机数的。然后<code>Usage</code>,<code>seq(...)</code>这个的意思就是告诉你，你要用我生成随机数，格式就是这样的<code>seq</code>开头，跟着个<code>()</code>,括号里呢就要开始放条件了，都有啥条件呢，咱们来看下面的<code>Arguments</code>,<code>from</code>说白了就是从几开始，<code>to</code>就是到哪个数结束，<code>by</code>就是前面俩数的间隔是多少，就这么简单。看到这之后心里就有个初步印象了，然后蹦过中间段直接到最后的<code>Example</code>，直接贴心的给你放上几个例子，每个开发者都是生怕你不会用我的包啊，就差现场给你讲咋用了，于我而言也是一样的，把例子每一个都运行一遍，看看每一步都产生了啥结果，运行几次然后再回头对照上面的解释文档，也就差不多掌握了这个函数的基本用法了。</p>
+<p>看到这我们再来放上其他几个数据类型的vector，</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="part-base-r-you-have-to-know.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector of logical values</span></span>
+<span id="cb6-2"><a href="part-base-r-you-have-to-know.html#cb6-2" aria-hidden="true" tabindex="-1"></a>log_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb6-3"><a href="part-base-r-you-have-to-know.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="part-base-r-you-have-to-know.html#cb6-4" aria-hidden="true" tabindex="-1"></a>log_values</span>
+<span id="cb6-5"><a href="part-base-r-you-have-to-know.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1]  TRUE FALSE  TRUE FALSE</span></span></code></pre></div>
+<p>忘了讲，<code>#</code>井号键这个小符号挺好用，干啥的呢，注释掉一句话，说人话就是我这句话写在这了，但R你别给我运行，这句话就是提醒自己下面的代码是要干啥的，防止自己以后再回来看到自己写的东西一整个懵住，现在我也一直保持这个习惯，因为每天看的东西很多，回看过去的东西时经常会忘记当时为啥要这么写，还是挺有用处的，好记性不如烂笔头嘛！
+回到正文，上面的就是所谓的逻辑型向量，同理我们再构造一个字符型的，</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="part-base-r-you-have-to-know.html#cb7-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;lemon&quot;</span>, <span class="st">&quot;50&quot;</span>)</span>
+<span id="cb7-2"><a href="part-base-r-you-have-to-know.html#cb7-2" aria-hidden="true" tabindex="-1"></a>fruits</span>
+<span id="cb7-3"><a href="part-base-r-you-have-to-know.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;banana&quot; &quot;apple&quot;  &quot;orange&quot; &quot;mango&quot;  &quot;lemon&quot;  &quot;50&quot;</span></span></code></pre></div>
+<p>字符型的呢就要注意要给每一个单词或者数字加上英文双引号。</p>
+<p>在实际应用中，有时候我们只想用一个向量中的某个或某几个元素，这时候该咋办呢？这里介绍一种方法，<code>[]</code>，中括号，英文<code>brackets</code>,比如我要把fruits中的<code>"banana"</code>和<code>"mango"</code>拿出来，</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-base-r-you-have-to-know.html#cb8-1" aria-hidden="true" tabindex="-1"></a>fruits[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span>
+<span id="cb8-2"><a href="part-base-r-you-have-to-know.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;banana&quot; &quot;mango&quot;</span></span></code></pre></div>
+<p>前四个：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="part-base-r-you-have-to-know.html#cb9-1" aria-hidden="true" tabindex="-1"></a>fruits[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb9-2"><a href="part-base-r-you-have-to-know.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;banana&quot; &quot;apple&quot;  &quot;orange&quot; &quot;mango&quot;</span></span></code></pre></div>
+<p>如果想要选取除了<code>"banana</code>以外的所有元素，这时候可以用减号，</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="part-base-r-you-have-to-know.html#cb10-1" aria-hidden="true" tabindex="-1"></a>fruits[<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb10-2"><a href="part-base-r-you-have-to-know.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;apple&quot;  &quot;orange&quot; &quot;mango&quot;  &quot;lemon&quot;  &quot;50&quot;</span></span></code></pre></div>
+<p>注意这里的数字代表的是各个元素所在位置。</p>
+<p>当然了，对向量内元素进行排序也是可以的，遵循原则就是从小到大或者按照首字母排序，函数为<code>sort</code>,</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="part-base-r-you-have-to-know.html#cb11-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;lemon&quot;</span>)</span>
+<span id="cb11-2"><a href="part-base-r-you-have-to-know.html#cb11-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">2</span>)</span>
+<span id="cb11-3"><a href="part-base-r-you-have-to-know.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="part-base-r-you-have-to-know.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(fruits)  <span class="co"># Sort a string</span></span>
+<span id="cb11-5"><a href="part-base-r-you-have-to-know.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;apple&quot;  &quot;banana&quot; &quot;lemon&quot;  &quot;mango&quot;  &quot;orange&quot;</span></span>
+<span id="cb11-6"><a href="part-base-r-you-have-to-know.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(numbers) <span class="co"># Sort numbers</span></span>
+<span id="cb11-7"><a href="part-base-r-you-have-to-know.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1]  2  3  5  7 13 20</span></span></code></pre></div>
+</div>
+<div id="lists列表" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Lists(列表)</h2>
+<p>R 中的列表可以在其中包含许多不同的数据类型，列表是有序且可变的数据集合。啥意思呢？
+说人话就是甭管啥类型数据都往里搁就完了，要创建列表，使用<code>list()</code>函数：打个样，</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="part-base-r-you-have-to-know.html#cb12-1" aria-hidden="true" tabindex="-1"></a>thislist <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb12-2"><a href="part-base-r-you-have-to-know.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>),</span>
+<span id="cb12-3"><a href="part-base-r-you-have-to-know.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>),</span>
+<span id="cb12-4"><a href="part-base-r-you-have-to-know.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">c =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb12-5"><a href="part-base-r-you-have-to-know.html#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-6"><a href="part-base-r-you-have-to-know.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the list</span></span>
+<span id="cb12-7"><a href="part-base-r-you-have-to-know.html#cb12-7" aria-hidden="true" tabindex="-1"></a>thislist</span>
+<span id="cb12-8"><a href="part-base-r-you-have-to-know.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $a</span></span>
+<span id="cb12-9"><a href="part-base-r-you-have-to-know.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;apple&quot;  &quot;banana&quot; &quot;cherry&quot;</span></span>
+<span id="cb12-10"><a href="part-base-r-you-have-to-know.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-11"><a href="part-base-r-you-have-to-know.html#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $b</span></span>
+<span id="cb12-12"><a href="part-base-r-you-have-to-know.html#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 5 6 7 9</span></span>
+<span id="cb12-13"><a href="part-base-r-you-have-to-know.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-14"><a href="part-base-r-you-have-to-know.html#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $c</span></span>
+<span id="cb12-15"><a href="part-base-r-you-have-to-know.html#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1]  TRUE FALSE  TRUE</span></span></code></pre></div>
+<p>瞅见没，最常见的三种类型都在这个列表里，有点大肚能容一切的意思。
+上一节讲向量有属性，列表有没有呢？同样的我们试试，</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="part-base-r-you-have-to-know.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(thislist)</span>
+<span id="cb13-2"><a href="part-base-r-you-have-to-know.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;list&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="part-base-r-you-have-to-know.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(thislist)</span>
+<span id="cb14-2"><a href="part-base-r-you-have-to-know.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 3</span></span></code></pre></div>
+</div>
+<div id="matrices矩阵" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Matrices(矩阵)</h2>
+<p>矩阵是啥？别看名字吓人，其实也没啥，前面讲向量，列表它们都是一维的，矩阵是具有列(column)和行(row)的二维数据集。列是数据的垂直表示，而行是数据的水平表示。可以使用<code>matrix()</code> 函数创建矩阵,打个样，</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="part-base-r-you-have-to-know.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a matrix</span></span>
+<span id="cb15-2"><a href="part-base-r-you-have-to-know.html#cb15-2" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb15-3"><a href="part-base-r-you-have-to-know.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="part-base-r-you-have-to-know.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the matrix</span></span>
+<span id="cb15-5"><a href="part-base-r-you-have-to-know.html#cb15-5" aria-hidden="true" tabindex="-1"></a>thismatrix</span>
+<span id="cb15-6"><a href="part-base-r-you-have-to-know.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1] [,2]</span></span>
+<span id="cb15-7"><a href="part-base-r-you-have-to-know.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,]    1    4</span></span>
+<span id="cb15-8"><a href="part-base-r-you-have-to-know.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,]    2    5</span></span>
+<span id="cb15-9"><a href="part-base-r-you-have-to-know.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,]    3    6</span></span></code></pre></div>
+<p>NOTE:千万别忘了<code>c()</code>函数的用法啊，把众多元素组合在一起，怕你忘，提醒一下。
+数字矩阵，字符行不行呢？</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="part-base-r-you-have-to-know.html#cb16-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb16-2"><a href="part-base-r-you-have-to-know.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="part-base-r-you-have-to-know.html#cb16-3" aria-hidden="true" tabindex="-1"></a>thismatrix</span>
+<span id="cb16-4"><a href="part-base-r-you-have-to-know.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]    </span></span>
+<span id="cb16-5"><a href="part-base-r-you-have-to-know.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;cherry&quot;</span></span>
+<span id="cb16-6"><a href="part-base-r-you-have-to-know.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;orange&quot;</span></span></code></pre></div>
+<p>一样一样的，道理都是通的。</p>
+<p>Access Matrix Items
+You can access the items by using [ ] brackets. The first number “1” in the bracket specifies the row-position, while the second number “2” specifies the column-position:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="part-base-r-you-have-to-know.html#cb17-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb17-2"><a href="part-base-r-you-have-to-know.html#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="part-base-r-you-have-to-know.html#cb17-3" aria-hidden="true" tabindex="-1"></a>thismatrix[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb17-4"><a href="part-base-r-you-have-to-know.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;cherry&quot;</span></span></code></pre></div>
+<p>The whole row can be accessed if you specify a comma after the number in the bracket:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="part-base-r-you-have-to-know.html#cb18-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-2"><a href="part-base-r-you-have-to-know.html#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="part-base-r-you-have-to-know.html#cb18-3" aria-hidden="true" tabindex="-1"></a>thismatrix[<span class="dv">2</span>,]</span>
+<span id="cb18-4"><a href="part-base-r-you-have-to-know.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;banana&quot; &quot;orange&quot;</span></span></code></pre></div>
+<p>The whole column can be accessed if you specify a comma before the number in the bracket:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="part-base-r-you-have-to-know.html#cb19-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb19-2"><a href="part-base-r-you-have-to-know.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="part-base-r-you-have-to-know.html#cb19-3" aria-hidden="true" tabindex="-1"></a>thismatrix[,<span class="dv">2</span>]</span>
+<span id="cb19-4"><a href="part-base-r-you-have-to-know.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;cherry&quot; &quot;orange&quot;</span></span></code></pre></div>
+<p>Access More Than One Row
+More than one row can be accessed if you use the c() function:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="part-base-r-you-have-to-know.html#cb20-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;grape&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;melon&quot;</span>, <span class="st">&quot;fig&quot;</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb20-2"><a href="part-base-r-you-have-to-know.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="part-base-r-you-have-to-know.html#cb20-3" aria-hidden="true" tabindex="-1"></a>thismatrix[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),]</span>
+<span id="cb20-4"><a href="part-base-r-you-have-to-know.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]     [,3]   </span></span>
+<span id="cb20-5"><a href="part-base-r-you-have-to-know.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;orange&quot; &quot;pear&quot; </span></span>
+<span id="cb20-6"><a href="part-base-r-you-have-to-know.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;grape&quot;  &quot;melon&quot;</span></span></code></pre></div>
+<p>Access More Than One Column
+More than one column can be accessed if you use the c() function:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="part-base-r-you-have-to-know.html#cb21-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;grape&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;melon&quot;</span>, <span class="st">&quot;fig&quot;</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb21-2"><a href="part-base-r-you-have-to-know.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="part-base-r-you-have-to-know.html#cb21-3" aria-hidden="true" tabindex="-1"></a>thismatrix[, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]</span>
+<span id="cb21-4"><a href="part-base-r-you-have-to-know.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]       </span></span>
+<span id="cb21-5"><a href="part-base-r-you-have-to-know.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;orange&quot;   </span></span>
+<span id="cb21-6"><a href="part-base-r-you-have-to-know.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;grape&quot;    </span></span>
+<span id="cb21-7"><a href="part-base-r-you-have-to-know.html#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;cherry&quot; &quot;pineapple&quot;</span></span></code></pre></div>
+<p>Add Rows and Columns
+Use the cbind() function to add additional columns in a Matrix:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="part-base-r-you-have-to-know.html#cb22-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;grape&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;melon&quot;</span>, <span class="st">&quot;fig&quot;</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb22-2"><a href="part-base-r-you-have-to-know.html#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="part-base-r-you-have-to-know.html#cb22-3" aria-hidden="true" tabindex="-1"></a>newmatrix <span class="ot">&lt;-</span> <span class="fu">cbind</span>(thismatrix, <span class="fu">c</span>(<span class="st">&quot;strawberry&quot;</span>, <span class="st">&quot;blueberry&quot;</span>, <span class="st">&quot;raspberry&quot;</span>))</span>
+<span id="cb22-4"><a href="part-base-r-you-have-to-know.html#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="part-base-r-you-have-to-know.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the new matrix</span></span>
+<span id="cb22-6"><a href="part-base-r-you-have-to-know.html#cb22-6" aria-hidden="true" tabindex="-1"></a>newmatrix</span>
+<span id="cb22-7"><a href="part-base-r-you-have-to-know.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]        [,3]    [,4]        </span></span>
+<span id="cb22-8"><a href="part-base-r-you-have-to-know.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;orange&quot;    &quot;pear&quot;  &quot;strawberry&quot;</span></span>
+<span id="cb22-9"><a href="part-base-r-you-have-to-know.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;grape&quot;     &quot;melon&quot; &quot;blueberry&quot; </span></span>
+<span id="cb22-10"><a href="part-base-r-you-have-to-know.html#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;cherry&quot; &quot;pineapple&quot; &quot;fig&quot;   &quot;raspberry&quot;</span></span></code></pre></div>
+<p>Use the rbind() function to add additional rows in a Matrix:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="part-base-r-you-have-to-know.html#cb23-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;grape&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;melon&quot;</span>, <span class="st">&quot;fig&quot;</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb23-2"><a href="part-base-r-you-have-to-know.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="part-base-r-you-have-to-know.html#cb23-3" aria-hidden="true" tabindex="-1"></a>newmatrix <span class="ot">&lt;-</span> <span class="fu">rbind</span>(thismatrix, <span class="fu">c</span>(<span class="st">&quot;strawberry&quot;</span>, <span class="st">&quot;blueberry&quot;</span>, <span class="st">&quot;raspberry&quot;</span>))</span>
+<span id="cb23-4"><a href="part-base-r-you-have-to-know.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="part-base-r-you-have-to-know.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the new matrix</span></span>
+<span id="cb23-6"><a href="part-base-r-you-have-to-know.html#cb23-6" aria-hidden="true" tabindex="-1"></a>newmatrix</span>
+<span id="cb23-7"><a href="part-base-r-you-have-to-know.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]         [,2]        [,3]       </span></span>
+<span id="cb23-8"><a href="part-base-r-you-have-to-know.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;      &quot;orange&quot;    &quot;pear&quot;     </span></span>
+<span id="cb23-9"><a href="part-base-r-you-have-to-know.html#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot;     &quot;grape&quot;     &quot;melon&quot;    </span></span>
+<span id="cb23-10"><a href="part-base-r-you-have-to-know.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;cherry&quot;     &quot;pineapple&quot; &quot;fig&quot;      </span></span>
+<span id="cb23-11"><a href="part-base-r-you-have-to-know.html#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [4,] &quot;strawberry&quot; &quot;blueberry&quot; &quot;raspberry&quot;</span></span></code></pre></div>
+<p>Remove Rows and Columns
+Use the c() function to remove rows and columns in a Matrix:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="part-base-r-you-have-to-know.html#cb24-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;pineapple&quot;</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span><span class="dv">2</span>)</span>
+<span id="cb24-2"><a href="part-base-r-you-have-to-know.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="part-base-r-you-have-to-know.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Remove the first row and the first column</span></span>
+<span id="cb24-4"><a href="part-base-r-you-have-to-know.html#cb24-4" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> thismatrix[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>), <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb24-5"><a href="part-base-r-you-have-to-know.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="part-base-r-you-have-to-know.html#cb24-6" aria-hidden="true" tabindex="-1"></a>thismatrix</span>
+<span id="cb24-7"><a href="part-base-r-you-have-to-know.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;mango&quot;     &quot;pineapple&quot;</span></span></code></pre></div>
+<p>Check if an Item Exists
+To find out if a specified item is present in a matrix, use the %in% operator:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="part-base-r-you-have-to-know.html#cb25-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb25-2"><a href="part-base-r-you-have-to-know.html#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="part-base-r-you-have-to-know.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;apple&quot;</span> <span class="sc">%in%</span> thismatrix</span>
+<span id="cb25-4"><a href="part-base-r-you-have-to-know.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
+<p>Number of Rows and Columns
+Use the dim() function to find the number of rows and columns in a Matrix:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="part-base-r-you-have-to-know.html#cb26-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb26-2"><a href="part-base-r-you-have-to-know.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="part-base-r-you-have-to-know.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(thismatrix)</span>
+<span id="cb26-4"><a href="part-base-r-you-have-to-know.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 2</span></span></code></pre></div>
+<p>Matrix Length
+Use the length() function to find the dimension of a Matrix:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="part-base-r-you-have-to-know.html#cb27-1" aria-hidden="true" tabindex="-1"></a>thismatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb27-2"><a href="part-base-r-you-have-to-know.html#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="part-base-r-you-have-to-know.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(thismatrix)</span>
+<span id="cb27-4"><a href="part-base-r-you-have-to-know.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
+<p>Combine two Matrices
+Again, you can use the rbind() or cbind() function to combine two or more matrices together:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="part-base-r-you-have-to-know.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine matrices</span></span>
+<span id="cb28-2"><a href="part-base-r-you-have-to-know.html#cb28-2" aria-hidden="true" tabindex="-1"></a>Matrix1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;grape&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb28-3"><a href="part-base-r-you-have-to-know.html#cb28-3" aria-hidden="true" tabindex="-1"></a>Matrix2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;mango&quot;</span>, <span class="st">&quot;pineapple&quot;</span>, <span class="st">&quot;watermelon&quot;</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb28-4"><a href="part-base-r-you-have-to-know.html#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="part-base-r-you-have-to-know.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding it as a rows</span></span>
+<span id="cb28-6"><a href="part-base-r-you-have-to-know.html#cb28-6" aria-hidden="true" tabindex="-1"></a>Matrix_Combined <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Matrix1, Matrix2)</span>
+<span id="cb28-7"><a href="part-base-r-you-have-to-know.html#cb28-7" aria-hidden="true" tabindex="-1"></a>Matrix_Combined</span>
+<span id="cb28-8"><a href="part-base-r-you-have-to-know.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]        </span></span>
+<span id="cb28-9"><a href="part-base-r-you-have-to-know.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;cherry&quot;    </span></span>
+<span id="cb28-10"><a href="part-base-r-you-have-to-know.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;grape&quot;     </span></span>
+<span id="cb28-11"><a href="part-base-r-you-have-to-know.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;orange&quot; &quot;pineapple&quot; </span></span>
+<span id="cb28-12"><a href="part-base-r-you-have-to-know.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [4,] &quot;mango&quot;  &quot;watermelon&quot;</span></span>
+<span id="cb28-13"><a href="part-base-r-you-have-to-know.html#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="part-base-r-you-have-to-know.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding it as a columns</span></span>
+<span id="cb28-15"><a href="part-base-r-you-have-to-know.html#cb28-15" aria-hidden="true" tabindex="-1"></a>Matrix_Combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Matrix1, Matrix2)</span>
+<span id="cb28-16"><a href="part-base-r-you-have-to-know.html#cb28-16" aria-hidden="true" tabindex="-1"></a>Matrix_Combined</span>
+<span id="cb28-17"><a href="part-base-r-you-have-to-know.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1]     [,2]     [,3]     [,4]        </span></span>
+<span id="cb28-18"><a href="part-base-r-you-have-to-know.html#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;apple&quot;  &quot;cherry&quot; &quot;orange&quot; &quot;pineapple&quot; </span></span>
+<span id="cb28-19"><a href="part-base-r-you-have-to-know.html#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;banana&quot; &quot;grape&quot;  &quot;mango&quot;  &quot;watermelon&quot;</span></span></code></pre></div>
+</div>
+<div id="data-frame数据框" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Data Frame(数据框)</h2>
+<p>数据框是以表格格式显示的数据。</p>
+<p>数据框可以在其中包含不同类型的数据。 第一列可以是字符，第二列和第三列可以是数字或逻辑。 但是，每一列都应具有相同类型的数据。</p>
+<p>使用 data.frame() 函数创建数据框：</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="part-base-r-you-have-to-know.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb29-2"><a href="part-base-r-you-have-to-know.html#cb29-2" aria-hidden="true" tabindex="-1"></a>Data_Frame <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb29-3"><a href="part-base-r-you-have-to-know.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Training =</span> <span class="fu">c</span>(<span class="st">&quot;Strength&quot;</span>, <span class="st">&quot;Stamina&quot;</span>, <span class="st">&quot;Other&quot;</span>),</span>
+<span id="cb29-4"><a href="part-base-r-you-have-to-know.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pulse =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>),</span>
+<span id="cb29-5"><a href="part-base-r-you-have-to-know.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Duration =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">30</span>, <span class="dv">45</span>)</span>
+<span id="cb29-6"><a href="part-base-r-you-have-to-know.html#cb29-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-7"><a href="part-base-r-you-have-to-know.html#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="part-base-r-you-have-to-know.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data frame</span></span>
+<span id="cb29-9"><a href="part-base-r-you-have-to-know.html#cb29-9" aria-hidden="true" tabindex="-1"></a>Data_Frame</span>
+<span id="cb29-10"><a href="part-base-r-you-have-to-know.html#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training Pulse Duration</span></span>
+<span id="cb29-11"><a href="part-base-r-you-have-to-know.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength   100       60</span></span>
+<span id="cb29-12"><a href="part-base-r-you-have-to-know.html#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina   150       30</span></span>
+<span id="cb29-13"><a href="part-base-r-you-have-to-know.html#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other   120       45</span></span></code></pre></div>
+<p>Use the <code>summary()</code> function to summarize the data from a Data Frame:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="part-base-r-you-have-to-know.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Data_Frame)</span>
+<span id="cb30-2"><a href="part-base-r-you-have-to-know.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    Training             Pulse          Duration   </span></span>
+<span id="cb30-3"><a href="part-base-r-you-have-to-know.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Length:3           Min.   :100.0   Min.   :30.0  </span></span>
+<span id="cb30-4"><a href="part-base-r-you-have-to-know.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Class :character   1st Qu.:110.0   1st Qu.:37.5  </span></span>
+<span id="cb30-5"><a href="part-base-r-you-have-to-know.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mode  :character   Median :120.0   Median :45.0  </span></span>
+<span id="cb30-6"><a href="part-base-r-you-have-to-know.html#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     Mean   :123.3   Mean   :45.0  </span></span>
+<span id="cb30-7"><a href="part-base-r-you-have-to-know.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     3rd Qu.:135.0   3rd Qu.:52.5  </span></span>
+<span id="cb30-8"><a href="part-base-r-you-have-to-know.html#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     Max.   :150.0   Max.   :60.0</span></span></code></pre></div>
+<p>我们可以使用单括号 <code>[]</code>、双括号 <code>[[ ]]</code> 或 <code>$</code> 来访问数据框中的列：</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="part-base-r-you-have-to-know.html#cb31-1" aria-hidden="true" tabindex="-1"></a>Data_Frame[<span class="dv">1</span>]</span>
+<span id="cb31-2"><a href="part-base-r-you-have-to-know.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training</span></span>
+<span id="cb31-3"><a href="part-base-r-you-have-to-know.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength</span></span>
+<span id="cb31-4"><a href="part-base-r-you-have-to-know.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina</span></span>
+<span id="cb31-5"><a href="part-base-r-you-have-to-know.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other</span></span>
+<span id="cb31-6"><a href="part-base-r-you-have-to-know.html#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="part-base-r-you-have-to-know.html#cb31-7" aria-hidden="true" tabindex="-1"></a>Data_Frame[[<span class="st">&quot;Training&quot;</span>]]</span>
+<span id="cb31-8"><a href="part-base-r-you-have-to-know.html#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Strength&quot; &quot;Stamina&quot;  &quot;Other&quot;</span></span>
+<span id="cb31-9"><a href="part-base-r-you-have-to-know.html#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="part-base-r-you-have-to-know.html#cb31-10" aria-hidden="true" tabindex="-1"></a>Data_Frame<span class="sc">$</span>Training</span>
+<span id="cb31-11"><a href="part-base-r-you-have-to-know.html#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Strength&quot; &quot;Stamina&quot;  &quot;Other&quot;</span></span></code></pre></div>
+<p>使用 <code>rbind()</code> 函数在数据框中添加新行：</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="part-base-r-you-have-to-know.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new row</span></span>
+<span id="cb32-2"><a href="part-base-r-you-have-to-know.html#cb32-2" aria-hidden="true" tabindex="-1"></a>New_row_DF <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Data_Frame, <span class="fu">c</span>(<span class="st">&quot;Strength&quot;</span>, <span class="dv">110</span>, <span class="dv">110</span>))</span>
+<span id="cb32-3"><a href="part-base-r-you-have-to-know.html#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="part-base-r-you-have-to-know.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the new row</span></span>
+<span id="cb32-5"><a href="part-base-r-you-have-to-know.html#cb32-5" aria-hidden="true" tabindex="-1"></a>New_row_DF</span>
+<span id="cb32-6"><a href="part-base-r-you-have-to-know.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training Pulse Duration</span></span>
+<span id="cb32-7"><a href="part-base-r-you-have-to-know.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength   100       60</span></span>
+<span id="cb32-8"><a href="part-base-r-you-have-to-know.html#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina   150       30</span></span>
+<span id="cb32-9"><a href="part-base-r-you-have-to-know.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other   120       45</span></span>
+<span id="cb32-10"><a href="part-base-r-you-have-to-know.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Strength   110      110</span></span></code></pre></div>
+<p>使用 <code>cbind()</code> 函数在数据框中添加新列：</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="part-base-r-you-have-to-know.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column</span></span>
+<span id="cb33-2"><a href="part-base-r-you-have-to-know.html#cb33-2" aria-hidden="true" tabindex="-1"></a>New_col_DF <span class="ot">&lt;-</span> <span class="fu">cbind</span>(New_row_DF, <span class="at">Steps =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">6000</span>, <span class="dv">2000</span>,<span class="dv">5000</span>))</span>
+<span id="cb33-3"><a href="part-base-r-you-have-to-know.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="part-base-r-you-have-to-know.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the new column</span></span>
+<span id="cb33-5"><a href="part-base-r-you-have-to-know.html#cb33-5" aria-hidden="true" tabindex="-1"></a>New_col_DF</span>
+<span id="cb33-6"><a href="part-base-r-you-have-to-know.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training Pulse Duration Steps</span></span>
+<span id="cb33-7"><a href="part-base-r-you-have-to-know.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength   100       60  1000</span></span>
+<span id="cb33-8"><a href="part-base-r-you-have-to-know.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina   150       30  6000</span></span>
+<span id="cb33-9"><a href="part-base-r-you-have-to-know.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other   120       45  2000</span></span>
+<span id="cb33-10"><a href="part-base-r-you-have-to-know.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Strength   110      110  5000</span></span></code></pre></div>
+<p>使用 rbind() 函数垂直组合 R 中的两个或多个数据框：</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="part-base-r-you-have-to-know.html#cb34-1" aria-hidden="true" tabindex="-1"></a>Data_Frame1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb34-2"><a href="part-base-r-you-have-to-know.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Training =</span> <span class="fu">c</span>(<span class="st">&quot;Strength&quot;</span>, <span class="st">&quot;Stamina&quot;</span>, <span class="st">&quot;Other&quot;</span>),</span>
+<span id="cb34-3"><a href="part-base-r-you-have-to-know.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pulse =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>),</span>
+<span id="cb34-4"><a href="part-base-r-you-have-to-know.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Duration =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">30</span>, <span class="dv">45</span>)</span>
+<span id="cb34-5"><a href="part-base-r-you-have-to-know.html#cb34-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-6"><a href="part-base-r-you-have-to-know.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="part-base-r-you-have-to-know.html#cb34-7" aria-hidden="true" tabindex="-1"></a>Data_Frame2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb34-8"><a href="part-base-r-you-have-to-know.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Training =</span> <span class="fu">c</span>(<span class="st">&quot;Stamina&quot;</span>, <span class="st">&quot;Stamina&quot;</span>, <span class="st">&quot;Strength&quot;</span>),</span>
+<span id="cb34-9"><a href="part-base-r-you-have-to-know.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pulse =</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="dv">150</span>, <span class="dv">160</span>),</span>
+<span id="cb34-10"><a href="part-base-r-you-have-to-know.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Duration =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">20</span>)</span>
+<span id="cb34-11"><a href="part-base-r-you-have-to-know.html#cb34-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-12"><a href="part-base-r-you-have-to-know.html#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="part-base-r-you-have-to-know.html#cb34-13" aria-hidden="true" tabindex="-1"></a>New_Data_Frame <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Data_Frame1, Data_Frame2)</span>
+<span id="cb34-14"><a href="part-base-r-you-have-to-know.html#cb34-14" aria-hidden="true" tabindex="-1"></a>New_Data_Frame</span>
+<span id="cb34-15"><a href="part-base-r-you-have-to-know.html#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training Pulse Duration</span></span>
+<span id="cb34-16"><a href="part-base-r-you-have-to-know.html#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength   100       60</span></span>
+<span id="cb34-17"><a href="part-base-r-you-have-to-know.html#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina   150       30</span></span>
+<span id="cb34-18"><a href="part-base-r-you-have-to-know.html#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other   120       45</span></span>
+<span id="cb34-19"><a href="part-base-r-you-have-to-know.html#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  Stamina   140       30</span></span>
+<span id="cb34-20"><a href="part-base-r-you-have-to-know.html#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  Stamina   150       30</span></span>
+<span id="cb34-21"><a href="part-base-r-you-have-to-know.html#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 Strength   160       20</span></span></code></pre></div>
+<p>使用 cbind() 函数水平组合 R 中的两个或多个数据框：</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="part-base-r-you-have-to-know.html#cb35-1" aria-hidden="true" tabindex="-1"></a>Data_Frame3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb35-2"><a href="part-base-r-you-have-to-know.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Training =</span> <span class="fu">c</span>(<span class="st">&quot;Strength&quot;</span>, <span class="st">&quot;Stamina&quot;</span>, <span class="st">&quot;Other&quot;</span>),</span>
+<span id="cb35-3"><a href="part-base-r-you-have-to-know.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pulse =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>),</span>
+<span id="cb35-4"><a href="part-base-r-you-have-to-know.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Duration =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">30</span>, <span class="dv">45</span>)</span>
+<span id="cb35-5"><a href="part-base-r-you-have-to-know.html#cb35-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-6"><a href="part-base-r-you-have-to-know.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="part-base-r-you-have-to-know.html#cb35-7" aria-hidden="true" tabindex="-1"></a>Data_Frame4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span> (</span>
+<span id="cb35-8"><a href="part-base-r-you-have-to-know.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Steps =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">6000</span>, <span class="dv">2000</span>),</span>
+<span id="cb35-9"><a href="part-base-r-you-have-to-know.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Calories =</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">300</span>)</span>
+<span id="cb35-10"><a href="part-base-r-you-have-to-know.html#cb35-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb35-11"><a href="part-base-r-you-have-to-know.html#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="part-base-r-you-have-to-know.html#cb35-12" aria-hidden="true" tabindex="-1"></a>New_Data_Frame1 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(Data_Frame3, Data_Frame4)</span>
+<span id="cb35-13"><a href="part-base-r-you-have-to-know.html#cb35-13" aria-hidden="true" tabindex="-1"></a>New_Data_Frame1</span>
+<span id="cb35-14"><a href="part-base-r-you-have-to-know.html#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Training Pulse Duration Steps Calories</span></span>
+<span id="cb35-15"><a href="part-base-r-you-have-to-know.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Strength   100       60  3000      300</span></span>
+<span id="cb35-16"><a href="part-base-r-you-have-to-know.html#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Stamina   150       30  6000      400</span></span>
+<span id="cb35-17"><a href="part-base-r-you-have-to-know.html#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    Other   120       45  2000      300</span></span></code></pre></div>
+
+</div>
+</div>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>R for Geoscience</strong>" was written by John Doe. It was last built on 2023-02-23.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+</body>
+
+</html>
