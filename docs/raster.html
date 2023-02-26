@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Raster | 10-multispectral_sensor</title>
+<meta name="author" content="shuxin">
+<meta name="description" content="6.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  6.1.1...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Raster | 10-multispectral_sensor">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  6.1.1...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Raster | 10-multispectral_sensor">
+<meta name="twitter:description" content="6.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  6.1.1...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">10-multispectral_sensor</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B.html"><span class="header-section-number">2</span> 作者简介</a></li>
+<li class="book-part">Base R</li>
+<li><a class="" href="base-r-you-have-to-know.html"><span class="header-section-number">4</span> Base R you have to know</a></li>
+<li><a class="" href="all-about-tidyverse.html">All about tidyverse</a></li>
+<li class="book-part">bookdown</li>
+<li><a class="" href="how-to-write-a-book.html">how to write a book</a></li>
+<li><a class="active" href="raster.html"><span class="header-section-number">6</span> Raster</a></li>
+<li><a class="" href="multispectral-sensors.html"><span class="header-section-number">7</span> Multispectral sensors</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="raster" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Raster<a class="anchor" aria-label="anchor" href="#raster"><i class="fas fa-link"></i></a>
+</h1>
+<div id="resolution" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Resolution<a class="anchor" aria-label="anchor" href="#resolution"><i class="fas fa-link"></i></a>
+</h2>
+<p style="text-align:justify;">
+What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are <strong>three</strong> different resolutions for a satellite image in Geoscience.<br></p>
+<div id="spatial-resolution" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> <strong>Spatial resolution</strong><a class="anchor" aria-label="anchor" href="#spatial-resolution"><i class="fas fa-link"></i></a>
+</h3>
+<p style="text-align:justify;">
+Spatial resolution is the detail in pixels of an image. High spatial resolution means more detail and a smaller grid cell size. Whereas, lower spatial resolution means less detail and larger pixel size. Overall, spatial resolution describes the quality of an image and how detailed objects are in an image. If the grid cells are smaller, this means the spatial resolution has more detail with more pixels.
+</p>
+<div class="inline-figure"><img src="images/Spatial-Resolution-Comparison.png"></div>
+</div>
+<div id="temporal-resolution" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> <strong>Temporal resolution</strong><a class="anchor" aria-label="anchor" href="#temporal-resolution"><i class="fas fa-link"></i></a>
+</h3>
+<p style="text-align:justify;">
+Same definition of temporal resolution can be applied to polar orbiting satellites. But defining it more precisely, temporal resolution for a polar orbiting satellite is the amount of time that the satellite takes to revisit and recapture a particular site. It is also commonly referred to as a satellite’s revisit period.
+</p>
+<img src="images/temporal-resolution.png" alt="Temporal resolution of some popular satellites">
+### <strong>Spectral resolution</strong><br><p style="text-align:justify;">
+Spectral resolution is determined by the width of each band in a wavelength. The more bands in an image, the more complex the color will be.
+</p>
+<p><img src="images/Spectral-resolution.png" alt="Spectral resolution of currently available optical satellite sensors grouped by different domains of the electromagnetic spectrum (VIS = visible, NIR = near infrared, VNIR = visible near infrared, SWIR = shortwave infrared, TIR = thermal infrared)"><br></p>
+</div>
+</div>
+<div id="crs" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> CRS<a class="anchor" aria-label="anchor" href="#crs"><i class="fas fa-link"></i></a>
+</h2>
+<p style="text-align:justify;">
+A Coordinate reference system (CRS) defines, with the help of coordinates, how the two-dimensional, projected map is related to real locations on the earth. There are two different types of coordinate reference systems: <strong><code>Geographic Coordinate Systems</code></strong> and <strong><code>Projected Coordinate Systems</code></strong>.
+</p>
+</div>
+<div id="manipulation-in-r" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Manipulation in R<a class="anchor" aria-label="anchor" href="#manipulation-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p style="text-align:justify;">
+How can we manipulate remote sensing imagery in R after we have a general understanding of raster data? Here I want to introduce to you a package: <code>terra</code>, which is a tweaked version or even a more powerful package than the well-known one: <code>raster</code>. As for the reason why the author choose to rebuild some functions, you can check it <a href="http://www.wvview.org/os_sa/15_Raster_Analysis_terra.html">here</a>.
+</p>
+</div>
+<div id="reference" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Reference<a class="anchor" aria-label="anchor" href="#reference"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><a href="http://modern-rstats.eu/index.html#note-to-the-reader" class="uri">http://modern-rstats.eu/index.html#note-to-the-reader</a></li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="how-to-write-a-book.html">how to write a book</a></div>
+<div class="next"><a href="multispectral-sensors.html"><span class="header-section-number">7</span> Multispectral sensors</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#raster"><span class="header-section-number">6</span> Raster</a></li>
+<li>
+<a class="nav-link" href="#resolution"><span class="header-section-number">6.1</span> Resolution</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#spatial-resolution"><span class="header-section-number">6.1.1</span> Spatial resolution</a></li>
+<li><a class="nav-link" href="#temporal-resolution"><span class="header-section-number">6.1.2</span> Temporal resolution</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#crs"><span class="header-section-number">6.2</span> CRS</a></li>
+<li><a class="nav-link" href="#manipulation-in-r"><span class="header-section-number">6.3</span> Manipulation in R</a></li>
+<li><a class="nav-link" href="#reference"><span class="header-section-number">6.4</span> Reference</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/08-raster.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/08-raster.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>10-multispectral_sensor</strong>" was written by shuxin. It was last built on 2023-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

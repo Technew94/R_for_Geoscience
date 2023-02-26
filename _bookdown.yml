@@ -15,7 +15,7 @@ rmd_files: [
   "01-baseR.Rmd",
   "02-tidyverse.Rmd",
   "use_bookdown.Rmd",
-  "08-crs.Rmd",
+  "08-raster.Rmd",
   "10-mutispectral_sensor.Rmd"
 
   
