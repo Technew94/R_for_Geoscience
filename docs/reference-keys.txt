@@ -6,3 +6,10 @@ vector向量
 lists列表
 matrices矩阵
 data-frame数据框
+raster
+resolution
+spatial-resolution
+temporal-resolution
+crs
+manipulation-in-r
+reference

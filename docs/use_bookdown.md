@@ -1,8 +1,13 @@
-# (PART\*) bookdown
+# (PART) bookdown {-}
 
-# how to write a book {-}
+# how to use bookdown {-}
 
 
 
-请参考以下视频
-https://www.youtube.com/watch?v=9i0ElncHGRg&t=905s
+请参考以下资料：
+
+- https://bookdown.org/xiao/RAnalysisBook/
+
+- https://bookdown.org/yihui/bookdown/
+
+- https://www.youtube.com/watch?v=9i0ElncHGRg&t=905s
