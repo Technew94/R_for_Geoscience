@@ -152,8 +152,8 @@
 地理学博士学位在读，对R及其在地理空间数据的应用充满了好奇与热情，在这里
 记录下自己在日常工作中有趣的数据处理过程。我认为偷懒能更好地促进技术发展。
 
-\hypertarget{part-ux57faux7840ux7bc7}{%
-\part{基础篇}\label{part-ux57faux7840ux7bc7}}
+\hypertarget{part-ux57faux7840}{%
+\part{基础}\label{part-ux57faux7840}}
 
 \hypertarget{base-r-you-have-to-know}{%
 \chapter{Base R you have to know}\label{base-r-you-have-to-know}}
@@ -164,17 +164,15 @@
 \hypertarget{r-ux662fux5565ux5e72ux5565ux7528ux7684}{%
 \section{R? 是啥，干啥用的？}\label{r-ux662fux5565ux5e72ux5565ux7528ux7684}}
 
-1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：
+1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：\\
 
 \begin{figure}
 \centering
-\includegraphics{images/creators.jpg}
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/creators.jpg}
 \caption{\emph{Ross Ihaka and Robert Gentleman, the creators of R.}}
 \end{figure}
 
 R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。\href{https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html}{The R Base Package} 会是你的好帮手。
-
-平时在小红书，微博，B站等经常看到有人做数据分析师等，他们掌握的语言工具并不止一种，R，Python，stata等都是需要用到的，但对于入门级选手来说，R是最友好的，也是最容易让你产生成就感的。
 
 \hypertarget{vectorux5411ux91cf}{%
 \section{Vector(向量)}\label{vectorux5411ux91cf}}
@@ -254,20 +252,21 @@ Vector是R中的一种基础数据结构，它包含相同类型的元素。数�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fruits }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"banana"}\NormalTok{, }\StringTok{"apple"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"mango"}\NormalTok{, }\StringTok{"lemon"}\NormalTok{, }\StringTok{"50"}\NormalTok{)}
+\NormalTok{fruits }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"beijing"}\NormalTok{, }\StringTok{"shanghai"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{, }\StringTok{"shenzhen"}\NormalTok{, }\StringTok{"xianggang"}\NormalTok{, }\StringTok{"50"}\NormalTok{)}
 \NormalTok{fruits}
-\CommentTok{\#\textgreater{} [1] "banana" "apple"  "orange" "mango"  "lemon"  "50"}
+\CommentTok{\#\textgreater{} [1] "beijing"   "shanghai"  "guangzhou" "shenzhen" }
+\CommentTok{\#\textgreater{} [5] "xianggang" "50"}
 \end{Highlighting}
 \end{Shaded}
 
 字符型的呢就要注意要给每一个单词或者数字加上英文双引号。
 
-在实际应用中，有时候我们只想用一个向量中的某个或某几个元素，这时候该咋办呢？这里介绍一种方法，\texttt{{[}{]}}，中括号，英文\texttt{brackets},比如我要把fruits中的\texttt{"banana"}和\texttt{"mango"}拿出来，
+在实际应用中，有时候我们只想用一个向量中的某个或某几个元素，这时候该咋办呢？这里介绍一种方法，\texttt{{[}{]}}，中括号，英文\texttt{brackets},比如我要把fruits中的\texttt{"beijing"}和\texttt{"shenzhen"}拿出来，
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{fruits[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{)]}
-\CommentTok{\#\textgreater{} [1] "banana" "mango"}
+\CommentTok{\#\textgreater{} [1] "beijing"  "shenzhen"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -276,16 +275,17 @@ Vector是R中的一种基础数据结构，它包含相同类型的元素。数�
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{fruits[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{]}
-\CommentTok{\#\textgreater{} [1] "banana" "apple"  "orange" "mango"}
+\CommentTok{\#\textgreater{} [1] "beijing"   "shanghai"  "guangzhou" "shenzhen"}
 \end{Highlighting}
 \end{Shaded}
 
-如果想要选取除了\texttt{"banana}以外的所有元素，这时候可以用减号，
+如果想要选取除了\texttt{"beijing}以外的所有元素，这时候可以用减号，
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{fruits[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
-\CommentTok{\#\textgreater{} [1] "apple"  "orange" "mango"  "lemon"  "50"}
+\CommentTok{\#\textgreater{} [1] "shanghai"  "guangzhou" "shenzhen"  "xianggang"}
+\CommentTok{\#\textgreater{} [5] "50"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -295,11 +295,12 @@ Vector是R中的一种基础数据结构，它包含相同类型的元素。数�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fruits }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"banana"}\NormalTok{, }\StringTok{"apple"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"mango"}\NormalTok{, }\StringTok{"lemon"}\NormalTok{)}
+\NormalTok{fruits }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"beijing"}\NormalTok{, }\StringTok{"shanghai"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{, }\StringTok{"shenzhen"}\NormalTok{, }\StringTok{"xianggang"}\NormalTok{)}
 \NormalTok{numbers }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{13}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{2}\NormalTok{)}
 
 \FunctionTok{sort}\NormalTok{(fruits)  }\CommentTok{\# Sort a string}
-\CommentTok{\#\textgreater{} [1] "apple"  "banana" "lemon"  "mango"  "orange"}
+\CommentTok{\#\textgreater{} [1] "beijing"   "guangzhou" "shanghai"  "shenzhen" }
+\CommentTok{\#\textgreater{} [5] "xianggang"}
 \FunctionTok{sort}\NormalTok{(numbers) }\CommentTok{\# Sort numbers}
 \CommentTok{\#\textgreater{} [1]  2  3  5  7 13 20}
 \end{Highlighting}
@@ -314,14 +315,14 @@ R 中的列表可以在其中包含许多不同的数据类型，列表是有序
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{thislist }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}
-  \AttributeTok{a =} \FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{),}
+  \AttributeTok{a =} \FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{),}
   \AttributeTok{b =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{),}
   \AttributeTok{c =} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{)}
 \NormalTok{)}
 \CommentTok{\# Print the list}
 \NormalTok{thislist}
 \CommentTok{\#\textgreater{} $a}
-\CommentTok{\#\textgreater{} [1] "apple"  "banana" "cherry"}
+\CommentTok{\#\textgreater{} [1] "shanghai" "beijing"  "cherry"  }
 \CommentTok{\#\textgreater{} }
 \CommentTok{\#\textgreater{} $b}
 \CommentTok{\#\textgreater{} [1] 1 2 5 6 7 9}
@@ -372,12 +373,12 @@ NOTE:千万别忘了\texttt{c()}函数的用法啊，把众多元素组合在一
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{thismatrix}
-\CommentTok{\#\textgreater{}      [,1]     [,2]    }
-\CommentTok{\#\textgreater{} [1,] "apple"  "cherry"}
-\CommentTok{\#\textgreater{} [2,] "banana" "orange"}
+\CommentTok{\#\textgreater{}      [,1]       [,2]       }
+\CommentTok{\#\textgreater{} [1,] "shanghai" "cherry"   }
+\CommentTok{\#\textgreater{} [2,] "beijing"  "guangzhou"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -388,7 +389,7 @@ You can access the items by using {[} {]} brackets. The first number ``1'' in th
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{thismatrix[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{]}
 \CommentTok{\#\textgreater{} [1] "cherry"}
@@ -399,10 +400,10 @@ The whole row can be accessed if you specify a comma after the number in the bra
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{thismatrix[}\DecValTok{2}\NormalTok{,]}
-\CommentTok{\#\textgreater{} [1] "banana" "orange"}
+\CommentTok{\#\textgreater{} [1] "beijing"   "guangzhou"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -410,10 +411,10 @@ The whole column can be accessed if you specify a comma before the number in the
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{thismatrix[,}\DecValTok{2}\NormalTok{]}
-\CommentTok{\#\textgreater{} [1] "cherry" "orange"}
+\CommentTok{\#\textgreater{} [1] "cherry"    "guangzhou"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -422,12 +423,12 @@ More than one row can be accessed if you use the c() function:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
 
 \NormalTok{thismatrix[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{),]}
-\CommentTok{\#\textgreater{}      [,1]     [,2]     [,3]   }
-\CommentTok{\#\textgreater{} [1,] "apple"  "orange" "pear" }
-\CommentTok{\#\textgreater{} [2,] "banana" "grape"  "melon"}
+\CommentTok{\#\textgreater{}      [,1]       [,2]        [,3]   }
+\CommentTok{\#\textgreater{} [1,] "shanghai" "guangzhou" "pear" }
+\CommentTok{\#\textgreater{} [2,] "beijing"  "grape"     "melon"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -436,13 +437,13 @@ More than one column can be accessed if you use the c() function:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
 
 \NormalTok{thismatrix[, }\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)]}
-\CommentTok{\#\textgreater{}      [,1]     [,2]       }
-\CommentTok{\#\textgreater{} [1,] "apple"  "orange"   }
-\CommentTok{\#\textgreater{} [2,] "banana" "grape"    }
-\CommentTok{\#\textgreater{} [3,] "cherry" "pineapple"}
+\CommentTok{\#\textgreater{}      [,1]       [,2]          }
+\CommentTok{\#\textgreater{} [1,] "shanghai" "guangzhou"   }
+\CommentTok{\#\textgreater{} [2,] "beijing"  "grape"       }
+\CommentTok{\#\textgreater{} [3,] "cherry"   "pineshanghai"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -451,16 +452,16 @@ Use the cbind() function to add additional columns in a Matrix:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
 
 \NormalTok{newmatrix }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(thismatrix, }\FunctionTok{c}\NormalTok{(}\StringTok{"strawberry"}\NormalTok{, }\StringTok{"blueberry"}\NormalTok{, }\StringTok{"raspberry"}\NormalTok{))}
 
 \CommentTok{\# Print the new matrix}
 \NormalTok{newmatrix}
-\CommentTok{\#\textgreater{}      [,1]     [,2]        [,3]    [,4]        }
-\CommentTok{\#\textgreater{} [1,] "apple"  "orange"    "pear"  "strawberry"}
-\CommentTok{\#\textgreater{} [2,] "banana" "grape"     "melon" "blueberry" }
-\CommentTok{\#\textgreater{} [3,] "cherry" "pineapple" "fig"   "raspberry"}
+\CommentTok{\#\textgreater{}      [,1]       [,2]           [,3]    [,4]        }
+\CommentTok{\#\textgreater{} [1,] "shanghai" "guangzhou"    "pear"  "strawberry"}
+\CommentTok{\#\textgreater{} [2,] "beijing"  "grape"        "melon" "blueberry" }
+\CommentTok{\#\textgreater{} [3,] "cherry"   "pineshanghai" "fig"   "raspberry"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -468,17 +469,17 @@ Use the rbind() function to add additional rows in a Matrix:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{,}\StringTok{"grape"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{, }\StringTok{"pear"}\NormalTok{, }\StringTok{"melon"}\NormalTok{, }\StringTok{"fig"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
 
 \NormalTok{newmatrix }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(thismatrix, }\FunctionTok{c}\NormalTok{(}\StringTok{"strawberry"}\NormalTok{, }\StringTok{"blueberry"}\NormalTok{, }\StringTok{"raspberry"}\NormalTok{))}
 
 \CommentTok{\# Print the new matrix}
 \NormalTok{newmatrix}
-\CommentTok{\#\textgreater{}      [,1]         [,2]        [,3]       }
-\CommentTok{\#\textgreater{} [1,] "apple"      "orange"    "pear"     }
-\CommentTok{\#\textgreater{} [2,] "banana"     "grape"     "melon"    }
-\CommentTok{\#\textgreater{} [3,] "cherry"     "pineapple" "fig"      }
-\CommentTok{\#\textgreater{} [4,] "strawberry" "blueberry" "raspberry"}
+\CommentTok{\#\textgreater{}      [,1]         [,2]           [,3]       }
+\CommentTok{\#\textgreater{} [1,] "shanghai"   "guangzhou"    "pear"     }
+\CommentTok{\#\textgreater{} [2,] "beijing"    "grape"        "melon"    }
+\CommentTok{\#\textgreater{} [3,] "cherry"     "pineshanghai" "fig"      }
+\CommentTok{\#\textgreater{} [4,] "strawberry" "blueberry"    "raspberry"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -487,13 +488,13 @@ Use the c() function to remove rows and columns in a Matrix:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"mango"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =}\DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{, }\StringTok{"shenzhen"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =}\DecValTok{2}\NormalTok{)}
 
 \CommentTok{\#Remove the first row and the first column}
 \NormalTok{thismatrix }\OtherTok{\textless{}{-}}\NormalTok{ thismatrix[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{), }\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)]}
 
 \NormalTok{thismatrix}
-\CommentTok{\#\textgreater{} [1] "mango"     "pineapple"}
+\CommentTok{\#\textgreater{} [1] "shenzhen"     "pineshanghai"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -502,9 +503,9 @@ To find out if a specified item is present in a matrix, use the \%in\% operator:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
-\StringTok{"apple"} \SpecialCharTok{\%in\%}\NormalTok{ thismatrix}
+\StringTok{"shanghai"} \SpecialCharTok{\%in\%}\NormalTok{ thismatrix}
 \CommentTok{\#\textgreater{} [1] TRUE}
 \end{Highlighting}
 \end{Shaded}
@@ -514,7 +515,7 @@ Use the dim() function to find the number of rows and columns in a Matrix:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \FunctionTok{dim}\NormalTok{(thismatrix)}
 \CommentTok{\#\textgreater{} [1] 2 2}
@@ -526,7 +527,7 @@ Use the length() function to find the dimension of a Matrix:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{thismatrix }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"guangzhou"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \FunctionTok{length}\NormalTok{(thismatrix)}
 \CommentTok{\#\textgreater{} [1] 4}
@@ -539,24 +540,24 @@ Again, you can use the rbind() or cbind() function to combine two or more matric
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Combine matrices}
-\NormalTok{Matrix1 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"apple"}\NormalTok{, }\StringTok{"banana"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"grape"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
-\NormalTok{Matrix2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"orange"}\NormalTok{, }\StringTok{"mango"}\NormalTok{, }\StringTok{"pineapple"}\NormalTok{, }\StringTok{"watermelon"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{Matrix1 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"shanghai"}\NormalTok{, }\StringTok{"beijing"}\NormalTok{, }\StringTok{"cherry"}\NormalTok{, }\StringTok{"grape"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\NormalTok{Matrix2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"guangzhou"}\NormalTok{, }\StringTok{"shenzhen"}\NormalTok{, }\StringTok{"pineshanghai"}\NormalTok{, }\StringTok{"watermelon"}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 
 \CommentTok{\# Adding it as a rows}
 \NormalTok{Matrix\_Combined }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(Matrix1, Matrix2)}
 \NormalTok{Matrix\_Combined}
-\CommentTok{\#\textgreater{}      [,1]     [,2]        }
-\CommentTok{\#\textgreater{} [1,] "apple"  "cherry"    }
-\CommentTok{\#\textgreater{} [2,] "banana" "grape"     }
-\CommentTok{\#\textgreater{} [3,] "orange" "pineapple" }
-\CommentTok{\#\textgreater{} [4,] "mango"  "watermelon"}
+\CommentTok{\#\textgreater{}      [,1]        [,2]          }
+\CommentTok{\#\textgreater{} [1,] "shanghai"  "cherry"      }
+\CommentTok{\#\textgreater{} [2,] "beijing"   "grape"       }
+\CommentTok{\#\textgreater{} [3,] "guangzhou" "pineshanghai"}
+\CommentTok{\#\textgreater{} [4,] "shenzhen"  "watermelon"}
 
 \CommentTok{\# Adding it as a columns}
 \NormalTok{Matrix\_Combined }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(Matrix1, Matrix2)}
 \NormalTok{Matrix\_Combined}
-\CommentTok{\#\textgreater{}      [,1]     [,2]     [,3]     [,4]        }
-\CommentTok{\#\textgreater{} [1,] "apple"  "cherry" "orange" "pineapple" }
-\CommentTok{\#\textgreater{} [2,] "banana" "grape"  "mango"  "watermelon"}
+\CommentTok{\#\textgreater{}      [,1]       [,2]     [,3]        [,4]          }
+\CommentTok{\#\textgreater{} [1,] "shanghai" "cherry" "guangzhou" "pineshanghai"}
+\CommentTok{\#\textgreater{} [2,] "beijing"  "grape"  "shenzhen"  "watermelon"}
 \end{Highlighting}
 \end{Shaded}
 
