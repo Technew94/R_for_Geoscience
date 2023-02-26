@@ -11,13 +11,13 @@ rmd_files: [
 
 
   "index.Rmd",
-  "author.Rmd",
+#  "author.Rmd",
   
   
   "01-baseR.Rmd",
-#  "02-tidyverse.Rmd",
-  "08-raster.Rmd",
+  "02-shujujiegou.Rmd",
+#  "08-raster.Rmd",
 #  "10-mutispectral_sensor.Rmd"
-  "use_bookdown.Rmd",
+#  "use_bookdown.Rmd",
   
 ]

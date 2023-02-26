@@ -140,39 +140,157 @@
 
 回想过去几年的学习生涯，往往会被一个个小问题卡住，其实后来回头看看也就是很简单的一行代码，一个鼠标点击，仅此而已。然而当局者迷，当自己孤身一人想要实现一个东西而身边又没有人可以求教时，那种孤独、痛苦真的会让自己变得不开心甚至抑郁，我懂你的。而当导师或者同学给你指了路或者给你演示了一边，通过了这个小关卡，瞬间觉得欣喜若狂，仿佛觉得我又行了，是啊，科研工作就是这样，总是让人又爱又恨。
 
-学会提问也是很重要的，我认为最有效的方法就是有一个了解甚至经历过你所在研究方向的人给你'打个样'，这样你很快就能模仿着上手，开始你的工作。现实中很难找到这样的人，导师或者师兄师姐都很忙，可能处于不好意思，也就不想继续问下去了，然后又回到了自己emo的死循环中。本书会重点告诉你如果你不知道怎么办的时候应该做什么，阅读完本书后你一定会变得更加自信！
+学会提问也是很重要的，我认为最有效的方法就是有一个了解甚至经历过你所在研究方向的人给你\texttt{打个样}，这样你很快就能模仿着上手，开始你的工作。现实中很难找到这样的人，导师或者师兄师姐都很忙，可能处于不好意思，也就不想继续问下去了，然后又回到了自己emo的死循环中。本书会重点告诉你如果你不知道怎么办的时候应该做什么，阅读完本书后你一定会变得更加自信！
+
+作者认为要成为一名优秀的地理数据处理工作者，需要具备以下素质，
+
+\begin{itemize}
+\tightlist
+\item
+  掌握地理学的基础知识，包括地球科学、地理信息科学、地图学、地理统计学等。
+\item
+  掌握数据分析技能，例如统计分析、数据可视化、机器学习等。
+\item
+  熟悉并熟练掌握地理数据处理工具ArcGIS、QGIS、R、Python或Javascript等。
+\item
+  有Linux系统使用经验，能使用shell对系统进行监测。
+\end{itemize}
 
 \hypertarget{ux8bfeux7a0bux5b89ux6392}{%
-\section{\texorpdfstring{\textbf{课程安排}}{课程安排}}\label{ux8bfeux7a0bux5b89ux6392}}
+\section*{\texorpdfstring{\textbf{课程安排}}{课程安排}}\label{ux8bfeux7a0bux5b89ux6392}}
+\addcontentsline{toc}{section}{\textbf{课程安排}}
 
-\hypertarget{author}{%
-\chapter*{作者简介}\label{author}}
-\addcontentsline{toc}{chapter}{作者简介}
+\hypertarget{practice}{%
+\section*{\texorpdfstring{\textbf{practice}}{practice}}\label{practice}}
+\addcontentsline{toc}{section}{\textbf{practice}}
 
-地理学博士学位在读，对R及其在地理空间数据的应用充满了好奇与热情，在这里
-记录下自己在日常工作中有趣的数据处理过程。我认为偷懒能更好地促进技术发展。
+\hypertarget{part-ux57faux7840ux77e5ux8bc6}{%
+\part{基础知识}\label{part-ux57faux7840ux77e5ux8bc6}}
 
-\hypertarget{part-ux57faux7840}{%
-\part{基础}\label{part-ux57faux7840}}
+\hypertarget{rux8bedux8a00ux5165ux95e8}{%
+\chapter{R语言入门}\label{rux8bedux8a00ux5165ux95e8}}
 
-\hypertarget{base-r-you-have-to-know}{%
-\chapter{Base R you have to know}\label{base-r-you-have-to-know}}
+\hypertarget{what-is-r}{%
+\section{What is R?}\label{what-is-r}}
+
+R 是一种用于统计计算和图形的编程语言和环境。 它由新西兰奥克兰大学的 Ross Ihaka 和 Robert Gentleman 在 20 世纪 90 年代中期开发。 R 在 GNU 通用公共许可证下免费提供，它已成为统计学家、数据科学家和研究人员中的流行工具。
+
+R 提供了多种统计和图形技术，包括线性和非线性建模、时间序列分析、聚类等。 它还拥有来自世界各地的用户贡献的大量软件包，进一步扩展了它的功能。 这些包可以很容易地安装并加载到 R 中以用于特定任务。
+
+R 有一个命令行界面，但也有几个集成开发环境 (IDE) 可用，例如 RStudio，它们提供了更加用户友好的界面。 R 通常与其他工具（如 SQL、Python 或 Excel）结合使用以进行数据操作和分析。
+
+\hypertarget{why-r}{%
+\section{Why R?}\label{why-r}}
+
+R 是统计计算和数据分析的流行选择，原因如下：
+
+\begin{itemize}
+\item
+  开源免费：R 是一个开源软件，这意味着任何人都可以免费下载、使用和修改它。 这使得包括学生、研究人员和专业人士在内的大量用户可以访问它。
+\item
+  强大的统计计算：R旨在处理复杂的统计计算和图形，使其适用于范围广泛的数据分析任务。 它提供了大量内置统计函数和包，涵盖范围广泛的技术，从基本的描述性统计到高级建模和机器学习算法。
+\item
+  庞大的用户社区：R 拥有庞大而活跃的用户社区，这意味着有大量的资源和支持可供用户使用。 有许多在线论坛、教程和书籍可帮助用户学习和解决问题。
+\item
+  可重复研究：R 提供了创建可重复研究的工具，这意味着可以记录整个数据分析过程并与他人共享，从而使其他人更容易复制分析并验证结果。
+\item
+  与其他工具集成：R 可以轻松与其他工具集成，例如 SQL 数据库、Python 和 Excel，从而更轻松地处理以不同格式存储的数据。
+\end{itemize}
+
+总的来说，R 是一种强大而灵活的数据分析工具，广泛应用于学术界、研究界和工业界。 它的流行是由于它的可访问性、功能以及支持它的庞大的用户和开发人员社区。
 
 \hypertarget{ux5b89ux88c5ux4e0eux914dux7f6e}{%
 \section{安装与配置}\label{ux5b89ux88c5ux4e0eux914dux7f6e}}
 
-\hypertarget{r-ux662fux5565ux5e72ux5565ux7528ux7684}{%
-\section{R? 是啥，干啥用的？}\label{r-ux662fux5565ux5e72ux5565ux7528ux7684}}
+\hypertarget{ux4e0bux8f7dux5e76ux5b89ux88c5r}{%
+\subsection{下载并安装R}\label{ux4e0bux8f7dux5e76ux5b89ux88c5r}}
 
-1992年，奥克兰大学的两位统计学大佬Ross Ihaka和Robert Gentleman为了给学生授课方便，两人一商量，市面上统计软件太烂，咱自己弄一个多好，大佬果然不一般，几句话的事就敲定了一个软件。大佬长这样：\\
+R是一种自由软件，您可以从\href{https://www.r-project.org}{R官方网站}下载R的最新版本。根据您的操作系统选择下载对应的版本，然后按照提示安装即可。国内用户推荐使用清华源进行下载。
 
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/creators.jpg}
-\caption{\emph{Ross Ihaka and Robert Gentleman, the creators of R.}}
-\end{figure}
+\hypertarget{ux5b89ux88c5rstudio}{%
+\subsection{安装RStudio}\label{ux5b89ux88c5rstudio}}
 
-R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R是我非常疑惑，除了这些耳熟能详的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。\href{https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html}{The R Base Package} 会是你的好帮手。
+RStudio是一款用于R编程的集成开发环境，它可以提供更方便的R编程和数据分析工具。您可以从\href{https://www.rstudio.com/}{官方网站}下载最新的RStudio Desktop版，并安装在您的计算机上。如果您是Max OS或Linux用户，请选择相对应的安装包。
+
+\hypertarget{rstudioux914dux7f6e}{%
+\subsection{Rstudio配置}\label{rstudioux914dux7f6e}}
+
+这一步更多的是对自己的生产环境进行配置，可以根据个人喜好进行更改，这里不再赘述\\
+请参考：\href{https://www.jianshu.com/p/d5360a387311}{软件安装配置------Rstudio配置}
+
+\hypertarget{ux5b89ux88c5ux5e38ux7528ux7684rux5305}{%
+\subsection{安装常用的R包}\label{ux5b89ux88c5ux5e38ux7528ux7684rux5305}}
+
+R包是R语言的扩展程序，它们包含了许多有用的函数和工具，可以方便地完成许多数据处理和分析任务。在RStudio中，您可以使用以下代码安装一些常用的R包：
+请参考：\href{https://www.jianshu.com/p/5a066d66d3d3}{软件安装配置------R包的使用}
+- 安装单个包
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"terra"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  安装多个包
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"terra"}\NormalTok{, }\StringTok{"pacman"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"leaflet"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  上述方法虽可以一次安装多个包，但还需要逐个加载，\texttt{pacman}包的好处是可以一次加载多个包，若某个包没有安装则自动安装并加载
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ifelse}\NormalTok{(}\SpecialCharTok{!}\StringTok{"pacman"} \SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{(), }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"pacman"}\NormalTok{),}
+       \FunctionTok{library}\NormalTok{(pacman))}
+\FunctionTok{p\_load}\NormalTok{(terra, tidyverse, leaflet)}
+\end{Highlighting}
+\end{Shaded}
+
+{Attention, Please!}\\
+Please do not use any {Chinese charactor(中文字符)} to set your path!
+
+\hypertarget{ux6ce8ux91ca-comments}{%
+\section{注释 comments}\label{ux6ce8ux91ca-comments}}
+
+R在执行代码时会忽略注释，它们不会影响程序的输出或行为。在R中注释符号\texttt{\#}键，也支持多行注释，选中需要注释的多行内容，按下快捷键为\texttt{Ctrl+Shift+C}即可。\\
+为你的代码添加注释有以下几个好处：
+
+\begin{itemize}
+\tightlist
+\item
+  记录代码：注释可用于解释代码的作用，为什么以某种方式编写代码，或为未来的读者提供上下文。 好的注释可以使代码更易于理解、维护和修改。\\
+\item
+  协作：如果您正在与其他人一起处理一个项目，评论可以帮助其他团队成员理解您的代码并使他们更容易与您协作。\\
+\item
+  调试：当您的代码遇到问题时，注释可以帮助您隔离问题并更快地找到解决方案。\\
+\item
+  请养成良好的代码书写习惯，提高代码可读性。
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{2}    \CommentTok{\# this is use to sum 1 and 2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux5185ux7f6eux51fdux6570}{%
+\section{内置函数}\label{ux5185ux7f6eux51fdux6570}}
+
+R内置了很多的基础函数，像求和、比较大小等等，在我刚接触R时非常疑惑，除了这些常见的函数外，R到底内置了多少函数呢？有的时候自己傻傻的写函数想要实现某些功能，到头来却发现R中有现成的可以用，真是浪费时间和精力。你可以在\href{https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html}{The R Base Package}中找到答案。
+
+\hypertarget{ux6570ux636eux7ed3ux6784}{%
+\chapter{数据结构}\label{ux6570ux636eux7ed3ux6784}}
 
 \hypertarget{vectorux5411ux91cf}{%
 \section{Vector(向量)}\label{vectorux5411ux91cf}}
@@ -707,84 +825,6 @@ Use the \texttt{summary()} function to summarize the data from a Data Frame:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{raster}{%
-\chapter{Raster}\label{raster}}
-
-\hypertarget{resolution}{%
-\section{Resolution}\label{resolution}}
-
-What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are \textbf{three} different resolutions for a satellite image in Geoscience.\\
-
-\hypertarget{spatial-resolution}{%
-\subsection{\texorpdfstring{\textbf{Spatial resolution}}{Spatial resolution}}\label{spatial-resolution}}
-
-Spatial resolution is the detail in pixels of an image. High spatial resolution means more detail and a smaller grid cell size. Whereas, lower spatial resolution means less detail and larger pixel size. Overall, spatial resolution describes the quality of an image and how detailed objects are in an image. If the grid cells are smaller, this means the spatial resolution has more detail with more pixels.
-
-\begin{figure}
-\centering
-\includegraphics{images/Spatial-Resolution-Comparison.png}
-\caption{spatial resolution comparsion}
-\end{figure}
-
-\hypertarget{temporal-resolution}{%
-\subsection{\texorpdfstring{\textbf{Temporal resolution}}{Temporal resolution}}\label{temporal-resolution}}
-
-Same definition of temporal resolution can be applied to polar orbiting satellites. But defining it more precisely, temporal resolution for a polar orbiting satellite is the amount of time that the satellite takes to revisit and recapture a particular site. It is also commonly referred to as a satellite's revisit period.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth,height=\textheight]{images/temporal-resolution.png}
-\caption{Temporal resolution of some popular satellites}
-\end{figure}
-
-\hypertarget{spectral-resolution}{%
-\subsection{\texorpdfstring{\textbf{Spectral resolution}\\
-}{Spectral resolution }}\label{spectral-resolution}}
-
-Spectral resolution is determined by the width of each band in a wavelength. The more bands in an image, the more complex the color will be.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{images/Spectral-resolution.png}
-\caption{Spectral resolution of currently available optical satellite sensors grouped by different domains of the electromagnetic spectrum (VIS = visible, NIR = near infrared, VNIR = visible near infrared, SWIR = shortwave infrared, TIR = thermal infrared)}
-\end{figure}
-
-\hypertarget{crs}{%
-\section{CRS}\label{crs}}
-
-A Coordinate reference system (CRS) defines, with the help of coordinates, how the two-dimensional, projected map is related to real locations on the earth. There are two different types of coordinate reference systems: \textbf{\texttt{Geographic\ Coordinate\ Systems}} and \textbf{\texttt{Projected\ Coordinate\ Systems}}. CRS is very important for becoming a back-end developer of GIS.
-
-\hypertarget{manipulation-in-r}{%
-\section{Manipulation in R}\label{manipulation-in-r}}
-
-How can we manipulate remote sensing imagery in R after we have a general understanding of raster data? Here I want to introduce to you a package: \texttt{terra}, which is a tweaked version or even a more powerful package than the well-known one: \texttt{raster}. As for the reason why the author choose to rebuild some functions, you can check it \href{http://www.wvview.org/os_sa/15_Raster_Analysis_terra.html}{here}.
-
-\hypertarget{reference}{%
-\section{Reference}\label{reference}}
-
-\begin{itemize}
-\tightlist
-\item
-  \url{http://modern-rstats.eu/index.html\#note-to-the-reader}
-\end{itemize}
-
-\hypertarget{part-bookdown}{%
-\part{bookdown}\label{part-bookdown}}
-
-\hypertarget{how-to-use-bookdown}{%
-\chapter*{how to use bookdown}\label{how-to-use-bookdown}}
-\addcontentsline{toc}{chapter}{how to use bookdown}
-
-请参考以下资料：
-
-\begin{itemize}
-\item
-  \url{https://bookdown.org/xiao/RAnalysisBook/}
-\item
-  \url{https://bookdown.org/yihui/bookdown/}
-\item
-  \url{https://www.youtube.com/watch?v=9i0ElncHGRg\&t=905s}
-\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 
