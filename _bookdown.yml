@@ -16,7 +16,7 @@ rmd_files: [
   
   "01-baseR.Rmd",
   "02-shujujiegou.Rmd",
-#  "08-raster.Rmd",
+  "08-raster.Rmd",
 #  "10-mutispectral_sensor.Rmd"
 #  "use_bookdown.Rmd",
   

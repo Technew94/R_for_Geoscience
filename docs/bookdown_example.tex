@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -44,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -58,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -67,7 +70,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -108,7 +111,7 @@
 \bibliographystyle{apalike}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={R for Geoscience},
   pdfauthor={Shuxin Ji},
@@ -117,7 +120,7 @@
 
 \title{R for Geoscience}
 \author{Shuxin Ji}
-\date{2023-02-26}
+\date{2023-08-12}
 
 \begin{document}
 \maketitle
@@ -825,6 +828,66 @@ Use the \texttt{summary()} function to summarize the data from a Data Frame:
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{raster}{%
+\chapter{Raster}\label{raster}}
+
+\hypertarget{resolution}{%
+\section{Resolution}\label{resolution}}
+
+What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are \textbf{three} different resolutions for a satellite image in Geoscience.\\
+
+\hypertarget{spatial-resolution}{%
+\subsection{\texorpdfstring{\textbf{Spatial resolution}}{Spatial resolution}}\label{spatial-resolution}}
+
+Spatial resolution is the detail in pixels of an image. High spatial resolution means more detail and a smaller grid cell size. Whereas, lower spatial resolution means less detail and larger pixel size. Overall, spatial resolution describes the quality of an image and how detailed objects are in an image. If the grid cells are smaller, this means the spatial resolution has more detail with more pixels.
+
+\begin{figure}
+\centering
+\includegraphics{images/Spatial-Resolution-Comparison.png}
+\caption{spatial resolution comparsion}
+\end{figure}
+
+\hypertarget{temporal-resolution}{%
+\subsection{\texorpdfstring{\textbf{Temporal resolution}}{Temporal resolution}}\label{temporal-resolution}}
+
+Same definition of temporal resolution can be applied to polar orbiting satellites. But defining it more precisely, temporal resolution for a polar orbiting satellite is the amount of time that the satellite takes to revisit and recapture a particular site. It is also commonly referred to as a satellite's revisit period.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth,height=\textheight]{images/temporal-resolution.png}
+\caption{Temporal resolution of some popular satellites}
+\end{figure}
+
+\hypertarget{spectral-resolution}{%
+\subsection{\texorpdfstring{\textbf{Spectral resolution}\\
+}{Spectral resolution }}\label{spectral-resolution}}
+
+Spectral resolution is determined by the width of each band in a wavelength. The more bands in an image, the more complex the color will be.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/Spectral-resolution.png}
+\caption{Spectral resolution of currently available optical satellite sensors grouped by different domains of the electromagnetic spectrum (VIS = visible, NIR = near infrared, VNIR = visible near infrared, SWIR = shortwave infrared, TIR = thermal infrared)}
+\end{figure}
+
+\hypertarget{crs}{%
+\section{CRS}\label{crs}}
+
+A Coordinate reference system (CRS) defines, with the help of coordinates, how the two-dimensional, projected map is related to real locations on the earth. There are two different types of coordinate reference systems: \textbf{\texttt{Geographic\ Coordinate\ Systems}} and \textbf{\texttt{Projected\ Coordinate\ Systems}}. CRS is very important for becoming a back-end developer of GIS.
+
+\hypertarget{manipulation-in-r}{%
+\section{Manipulation in R}\label{manipulation-in-r}}
+
+How can we manipulate remote sensing imagery in R after we have a general understanding of raster data? Here I want to introduce to you a package: \texttt{terra}, which is a tweaked version or even a more powerful package than the well-known one: \texttt{raster}. As for the reason why the author choose to rebuild some functions, you can check it \href{http://www.wvview.org/os_sa/15_Raster_Analysis_terra.html}{here}.
+
+\hypertarget{reference}{%
+\section{Reference}\label{reference}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{http://modern-rstats.eu/index.html\#note-to-the-reader}
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 
