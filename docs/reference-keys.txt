@@ -20,3 +20,4 @@ temporal-resolution
 crs
 manipulation-in-r
 reference
+multispectral-sensors

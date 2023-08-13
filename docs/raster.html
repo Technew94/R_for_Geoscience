@@ -7,7 +7,7 @@
 <title>Chapter 3 Raster | R for Geoscience</title>
 <meta name="author" content="Shuxin Ji">
 <meta name="description" content="3.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  3.1.1...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
 <meta property="og:title" content="Chapter 3 Raster | R for Geoscience">
 <meta property="og:type" content="book">
 <meta property="og:description" content="3.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  3.1.1...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="3.1 Resolution  What is resolution of a satellite image? How can we understand it? Generally speaking we can say there are three different resolutions for a satellite image in Geoscience.  3.1.1...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -48,6 +48,7 @@
 <li><a class="" href="r%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8.html"><span class="header-section-number">1</span> R语言入门</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="header-section-number">2</span> 数据结构</a></li>
 <li><a class="active" href="raster.html"><span class="header-section-number">3</span> Raster</a></li>
+<li><a class="" href="multispectral-sensors.html"><span class="header-section-number">4</span> Multispectral sensors</a></li>
 </ul>
 
         <div class="book-extra">
@@ -126,7 +127,7 @@ How can we manipulate remote sensing imagery in R after we have a general unders
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="header-section-number">2</span> 数据结构</a></div>
-<div class="empty"></div>
+<div class="next"><a href="multispectral-sensors.html"><span class="header-section-number">4</span> Multispectral sensors</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -158,7 +159,7 @@ How can we manipulate remote sensing imagery in R after we have a general unders
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>R for Geoscience</strong>" was written by Shuxin Ji. It was last built on 2023-08-12.</p>
+    <p>"<strong>R for Geoscience</strong>" was written by Shuxin Ji. It was last built on 2023-08-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

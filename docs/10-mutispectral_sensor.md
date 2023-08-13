@@ -1,9 +1,4 @@
----
-title: "10-multispectral_sensor"
-output: html_document
-date: "2023-02-24"
-author: shuxin
----
+
 
 
 

@@ -4,19 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Multispectral sensors | 10-multispectral_sensor</title>
-<meta name="author" content="shuxin">
+<title>Chapter 4 Multispectral sensors | R for Geoscience</title>
+<meta name="author" content="Shuxin Ji">
 <meta name="description" content="In this section I’ll introduce you to three well-known high-resolution multispectral sensor satellites in this section: MODIS, Landsat, and Sentinel-2.">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Multispectral sensors | 10-multispectral_sensor">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Multispectral sensors | R for Geoscience">
 <meta property="og:type" content="book">
 <meta property="og:description" content="In this section I’ll introduce you to three well-known high-resolution multispectral sensor satellites in this section: MODIS, Landsat, and Sentinel-2.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Multispectral sensors | 10-multispectral_sensor">
+<meta name="twitter:title" content="Chapter 4 Multispectral sensors | R for Geoscience">
 <meta name="twitter:description" content="In this section I’ll introduce you to three well-known high-resolution multispectral sensor satellites in this section: MODIS, Landsat, and Sentinel-2.">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -31,7 +31,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">10-multispectral_sensor</a>
+        <a href="index.html" title="">R for Geoscience</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -43,15 +43,12 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li><a class="" href="%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B.html"><span class="header-section-number">2</span> 作者简介</a></li>
-<li class="book-part">Base R</li>
-<li><a class="" href="base-r-you-have-to-know.html"><span class="header-section-number">4</span> Base R you have to know</a></li>
-<li><a class="" href="all-about-tidyverse.html">All about tidyverse</a></li>
-<li class="book-part">bookdown</li>
-<li><a class="" href="how-to-write-a-book.html">how to write a book</a></li>
-<li><a class="" href="raster.html"><span class="header-section-number">6</span> Raster</a></li>
-<li><a class="active" href="multispectral-sensors.html"><span class="header-section-number">7</span> Multispectral sensors</a></li>
+<li><a class="" href="index.html">About</a></li>
+<li class="book-part">基础知识</li>
+<li><a class="" href="r%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8.html"><span class="header-section-number">1</span> R语言入门</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="header-section-number">2</span> 数据结构</a></li>
+<li><a class="" href="raster.html"><span class="header-section-number">3</span> Raster</a></li>
+<li><a class="active" href="multispectral-sensors.html"><span class="header-section-number">4</span> Multispectral sensors</a></li>
 </ul>
 
         <div class="book-extra">
@@ -59,19 +56,19 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="multispectral-sensors" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="multispectral-sensors" class="section level1" number="4">
 <h1>
-<span class="header-section-number">7</span> Multispectral sensors<a class="anchor" aria-label="anchor" href="#multispectral-sensors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> Multispectral sensors<a class="anchor" aria-label="anchor" href="#multispectral-sensors"><i class="fas fa-link"></i></a>
 </h1>
 <p>In this section I’ll introduce you to three well-known high-resolution multispectral sensor satellites in this section: <a href="https://modis.gsfc.nasa.gov/">MODIS</a>, <a href="https://landsat.gsfc.nasa.gov/">Landsat</a>, and <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2">Sentinel-2</a>.</p>
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="raster.html"><span class="header-section-number">6</span> Raster</a></div>
+<div class="prev"><a href="raster.html"><span class="header-section-number">3</span> Raster</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#multispectral-sensors"><span class="header-section-number">7</span> Multispectral sensors</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#multispectral-sensors"><span class="header-section-number">4</span> Multispectral sensors</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -88,7 +85,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>10-multispectral_sensor</strong>" was written by shuxin. It was last built on 2023-02-24.</p>
+    <p>"<strong>R for Geoscience</strong>" was written by Shuxin Ji. It was last built on 2023-08-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
