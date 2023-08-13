@@ -48,14 +48,7 @@ set in the _output.yml file.&lt;/p&gt;">
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">About</a></li>
-<li class="book-part">基础知识</li>
-<li><a class="" href="r%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8.html"><span class="header-section-number">1</span> R语言入门</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="header-section-number">2</span> 数据结构</a></li>
-<li><a class="" href="raster.html"><span class="header-section-number">3</span> Raster</a></li>
-<li><a class="" href="multispectral-sensors.html"><span class="header-section-number">4</span> Multispectral sensors</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="active" href="index.html">About</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
@@ -65,18 +58,15 @@ set in the _output.yml file.&lt;/p&gt;">
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="about" class="section level1 unnumbered">
 <h1>About<a class="anchor" aria-label="anchor" href="#about"><i class="fas fa-link"></i></a>
 </h1>
-<p>你好，这里是shuxin对R在地理数据处理方面能力的第一次尝试。 博士入学时，导师告诉我最好还是要掌握一门语言来对地理数据进行处理，因为在日后的工作中 总会遇到大体量数据而不能通过手工完成，所以这是写下这本参考书目的原因之一。在未接触R之前，我都是通过桌面软件Arcgis，Qgis，ENVI，SNAP完成地理数据的查找，下载，预处理等工作，这种方法的好处就在于每一步都是所见即所得，自己心中可以清楚的预计每一步之后的结果大概是怎样的，但缺点也非常明显，一旦某一步操作出现了纰漏就可能对最终处理结果产生影响，进而导致结果的不可信，每当这时就需要从头开始梳理，重复数据的处理过程，这对我的工作积极性造成非常大的打击，我相信经历过以上过程的你一定深有体会。</p>
-<p>本书的重点主要放在地理工作中可能出现的问题上，也可以算作对我博士研究阶段所遇到问题的总结。 期间所用到的主要工具是R，在这里我不会给大家展示各种绚丽的代码，只需要大家跟随本书的思路，一步步 实践下来，当你能轻松的应对本书所描述的各类问题时，我相信你就已经是一位合格的地理工作者了。</p>
-<p>在我的学习期间，导师的日常工作非常繁忙，一年可以见到他的次数屈指可数，因为他每天除了要应对科研工作外，还要兼顾本科生和研究生的教学工作，所以每次见到他时都很疲惫，因为总会因为学生们的基础不同，而让他的教学没有办法有的放矢，为了避免出现类似状况，在此记录下要成为一名地理科研工作者所需要具备的基本条件。</p>
-<p>此书行文并不会像市面上传统的书籍讳莫如深，相反我是一个自由散漫的人，追求以最通俗易懂的话让你明白我想表达的意思，当然如果这让我的硕导看到的话肯定会说我不严谨或者大白话，但文字的意义不就是在此吗？所以不要害怕继续看下去，仔细读一下，动手操作一下，有问题就问一下（囿于本人才疏学浅，无论在行文亦或是代码部分可能会出现错误，请您不要吝惜您的指正，欢迎在github主页提出问题，感谢您啦），一切都会变的简单起来。</p>
-<p>回想过去几年的学习生涯，往往会被一个个小问题卡住，其实后来回头看看也就是很简单的一行代码，一个鼠标点击，仅此而已。然而当局者迷，当自己孤身一人想要实现一个东西而身边又没有人可以求教时，那种孤独、痛苦真的会让自己变得不开心甚至抑郁，我懂你的。而当导师或者同学给你指了路或者给你演示了一边，通过了这个小关卡，瞬间觉得欣喜若狂，仿佛觉得我又行了，是啊，科研工作就是这样，总是让人又爱又恨。</p>
-<p>学会提问也是很重要的，我认为最有效的方法就是有一个了解甚至经历过你所在研究方向的人给你<code>打个样</code>，这样你很快就能模仿着上手，开始你的工作。现实中很难找到这样的人，导师或者师兄师姐都很忙，可能处于不好意思，也就不想继续问下去了，然后又回到了自己emo的死循环中。本书会重点告诉你如果你不知道怎么办的时候应该做什么，阅读完本书后你一定会变得更加自信！</p>
-<p>作者认为要成为一名优秀的地理数据处理工作者，需要具备以下素质，</p>
+<p>Hello, this is shuxin’s first attempt at harnessing R for geographical data processing.</p>
+<p>Before delving into R, my approach primarily involved utilizing desktop software like ArcGIS, QGIS, ENVI, and SNAP to perform tasks such as locating, downloading, and preprocessing geographical data. The advantage of this method lies in its “what you see is what you get” nature, where I could anticipate the approximate outcomes of each step, offering a clear mental picture. However, the drawback is evident: any oversight in a step could potentially impact the final result, leading to questionable outcomes. This necessitates starting over, reiterating the data processing, which significantly dampened my work enthusiasm. I believe you’ve likely experienced a similar process.</p>
+<p>The core focus of this book primarily revolves around potential challenges in geographical work. It could also be viewed as a summary of issues I encountered during my doctoral research phase. The primary tool utilized throughout is R. Rather than showcasing intricate code, my aim here is for you to follow the book’s methodology, practicing step by step. When you can effortlessly tackle the array of issues described in the book, I’m confident you’ll already have transformed into a competent geographical professional.</p>
+<p>I believe that the following qualities are required to be a good geographic data processor.</p>
 <ul>
-<li>掌握地理学的基础知识，包括地球科学、地理信息科学、地图学、地理统计学等。</li>
-<li>掌握数据分析技能，例如统计分析、数据可视化、机器学习等。</li>
-<li>熟悉并熟练掌握地理数据处理工具ArcGIS、QGIS、R、Python或Javascript等。</li>
-<li>有Linux系统使用经验，能使用shell对系统进行监测。</li>
+<li>Mastery of the fundamentals of geography, including earth science, geographic information science, cartography, geostatistics, etc.</li>
+<li>Mastery of data analysis skills, such as statistical analysis, data visualisation, machine learning, etc.</li>
+<li>Familiarity and proficiency with geographic data processing tools R, Python, etc.</li>
+<li>Experience with Linux systems and ability to monitor systems using a shell.</li>
 </ul>
 <div id="课程安排" class="section level2 unnumbered">
 <h2>
@@ -90,12 +80,9 @@ set in the _output.yml file.&lt;/p&gt;">
 
 </div>
 </div>
-
-
-
   <div class="chapter-nav">
 <div class="empty"></div>
-<div class="next"><a href="r%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8.html"><span class="header-section-number">1</span> R语言入门</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
